@@ -1,0 +1,1 @@
+Refer to README.md into each individual folders for steps to execute sample scripts.

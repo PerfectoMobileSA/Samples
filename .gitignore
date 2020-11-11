@@ -1,0 +1,7 @@
+node_modules/
+.settings
+target/
+test-output/
+.DS_Store
+.classpath
+.project
