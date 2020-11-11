@@ -40,7 +40,7 @@ There are several prerequisite dependencies you should install on your machine p
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. If credentials are hardcoded:
 
-    		mvn test -P ios -Dexec.cleanupDaemonThreads=false
+		mvn clean install test -P ios -Dexec.cleanupDaemonThreads=false
     
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. If credentials are passed as parameters:
@@ -55,7 +55,7 @@ There are several prerequisite dependencies you should install on your machine p
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. If credentials are hardcoded:
 
-    		mvn test -P android -Dexec.cleanupDaemonThreads=false
+		mvn clean install test -P android -Dexec.cleanupDaemonThreads=false
     
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. If credentials are passed as parameters:

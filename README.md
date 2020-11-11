@@ -1,1 +1,1 @@
-Refer to README.md into each individual folders for steps to execute sample scripts.
+Refer to README.md of each individual folders for steps to execute sample scripts.
