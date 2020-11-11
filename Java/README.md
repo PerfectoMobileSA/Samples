@@ -40,12 +40,12 @@ There are several prerequisite dependencies you should install on your machine p
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. If credentials are hardcoded:
 
-		mvn clean install test -P ios -Dexec.cleanupDaemonThreads=false
+		mvn clean install test -P ios 
     
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. If credentials are passed as parameters:
 		
-		mvn clean install test  -P ios -DcloudName=<<cloud name>> -DsecurityToken=<<security token>> -Dexec.cleanupDaemonThreads=false
+		mvn clean install test  -P ios -DcloudName=<<cloud name>> -DsecurityToken=<<security token>> 
 			
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note: </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the cloud name of demo.perfectomobile.com)</br>
@@ -55,12 +55,12 @@ There are several prerequisite dependencies you should install on your machine p
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. If credentials are hardcoded:
 
-		mvn clean install test -P android -Dexec.cleanupDaemonThreads=false
+		mvn clean install test -P android 
     
   
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. If credentials are passed as parameters:
 		
-		mvn clean install test  -P android -DcloudName=<<cloud name>> -DsecurityToken=<<security token>> -Dexec.cleanupDaemonThreads=false
+		mvn clean install test  -P android -DcloudName=<<cloud name>> -DsecurityToken=<<security token>> 
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note: </br>
