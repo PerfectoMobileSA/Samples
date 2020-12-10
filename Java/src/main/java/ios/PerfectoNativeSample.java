@@ -17,15 +17,12 @@ public class PerfectoNativeSample {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities("", "", Platform.ANY);
 
-		// 1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the
-		// cloud name of demo.perfectomobile.com).
+		// 1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the cloud name of demo.perfectomobile.com).
 		String cloudName = "<<cloud name>>";
 
 		// 2. Replace <<security token>> with your perfecto security token.
 		String securityToken = "<<security token>>";
-		capabilities.setCapability("securityToken",
-				securityToken.equalsIgnoreCase("<<security token>>") ? System.getProperty("securityToken")
-						: securityToken);
+		capabilities.setCapability("securityToken", securityToken);
 
 		// 3. Set device capabilities.
 		capabilities.setCapability("model", "iPhone.*");
@@ -40,14 +37,13 @@ public class PerfectoNativeSample {
 		capabilities.setCapability("bundleId", "io.perfecto.expense.tracker");
 
 		// Set other capabilities.
-		capabilities.setCapability("fullReset", false);
-		capabilities.setCapability("autoLaunch", true);
-		capabilities.setCapability("autoInstrument", true);
+		// capabilities.setCapability("fullReset", false); // Reset app state by uninstalling app.
+		// capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
+		// capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
+
 
 		// Initialize the Appium driver
-		AppiumDriver<?> driver = new AppiumDriver<>(new URL("https://"
-				+ (cloudName.equalsIgnoreCase("<<cloud name>>") ? System.getProperty("cloudName") : cloudName)
-				+ ".perfectomobile.com/nexperience/perfectomobile/wd/hub"), capabilities);
+		AppiumDriver<?> driver = new AppiumDriver<>(new URL("https://" + cloudName + ".perfectomobile.com/nexperience/perfectomobile/wd/hub"), capabilities);
 
 		// Setting implicit wait
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

@@ -172,9 +172,6 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.16</version>
 		</dependency>
-		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-api</artifactId> 
-			<version>3.141.59</version> </dependency> <dependency> <groupId>org.seleniumhq.selenium</groupId> 
-			<artifactId>selenium-support</artifactId> <version>3.141.59</version> </dependency> -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
@@ -201,15 +198,4 @@
 			<version>[24.1.1,)</version>
 		</dependency>
 	</dependencies>
-
-	<developers>
-		<developer>
-			<id>gt</id>
-			<name>Genesis Thomas</name>
-			<email>genesist@perfectomobile.com</email>
-			<url>https://developers.perfectomobile.com/questions/users?username=genesist</url>
-			<organization>Perfecto</organization>
-			<organizationUrl>https://www.perfecto.io</organizationUrl>
-		</developer>
-	</developers>
 </project>

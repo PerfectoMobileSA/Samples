@@ -1,6 +1,6 @@
 ### Sample Java Native App Project
 
-This sample native app project is designed to get you up and running within few simple steps.
+This sample Java native app project is designed to get you up and running within few simple steps.
 
 Begin with installing the dependencies below, and continue with the Getting Started procedure below.
 
@@ -38,33 +38,11 @@ There are several prerequisite dependencies you should install on your machine p
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - For iOS test:
 
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. If credentials are hardcoded:
-
 		mvn clean install test -P ios 
     
-  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. If credentials are passed as parameters:
-		
-		mvn clean install test  -P ios -DcloudName=<<cloud name>> -DsecurityToken=<<security token>> 
-			
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note: </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the cloud name of demo.perfectomobile.com)</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Replace <<security token>> with your perfecto security token.<p></br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- For Android test:
 
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. If credentials are hardcoded:
-
 		mvn clean install test -P android 
-    
-  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. If credentials are passed as parameters:
-		
-		mvn clean install test  -P android -DcloudName=<<cloud name>> -DsecurityToken=<<security token>> 
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note: </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the cloud name of demo.perfectomobile.com)</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Replace <<security token>> with your perfecto security token.
 
 
