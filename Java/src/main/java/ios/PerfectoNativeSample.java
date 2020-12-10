@@ -37,10 +37,10 @@ public class PerfectoNativeSample {
 		capabilities.setCapability("bundleId", "io.perfecto.expense.tracker");
 
 		// Set other capabilities.
+		capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
+		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
 		// capabilities.setCapability("fullReset", false); // Reset app state by uninstalling app.
-		// capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
-		// capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
-
+		
 
 		// Initialize the Appium driver
 		AppiumDriver<?> driver = new AppiumDriver<>(new URL("https://" + cloudName + ".perfectomobile.com/nexperience/perfectomobile/wd/hub"), capabilities);
