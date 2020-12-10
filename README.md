@@ -8,4 +8,5 @@ Refer to README.md of each individual programming language folders for steps to 
 
 <b>Steps for CI:</b></br>
 1. Run `npm install`
-2. Run `npm run java`
+2. Run `npm install -g grunt`
+3. Run `npm run java`

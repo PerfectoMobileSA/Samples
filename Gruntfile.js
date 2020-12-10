@@ -15,6 +15,7 @@ module.exports = function(grunt) {
     replace: {
       creds: {
         src: ['**/*.java'],
+        overwrite: true,  
         // dest: 'temp/',
         replacements: [{
           from: "<<cloud name>>",
