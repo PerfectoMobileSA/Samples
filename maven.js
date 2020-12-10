@@ -16,5 +16,6 @@ mvn.execute(['clean', 'install', 'test', '-Pios'], { 'skipTests': false }).then(
   });
 });
 process.on('unhandledRejection', (reason) => {
-	console.log('REJECTION', reason);
+  console.log('REJECTION', reason);
+  process.exit(1);
 });
