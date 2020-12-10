@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "replace": "grunt replace",
-    "java": "npm run replace && node index.js"
+    "java": "npm run replace && node maven.js"
   },
   "repository": {
     "type": "git",
