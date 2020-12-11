@@ -55,6 +55,7 @@ public class PerfectoNativeSample {
 						driver.findElementByXPath("//*[@resource-id=\"io.perfecto.expense.tracker:id/login_email\"]")));
 		email.click();
 		email.sendKeys("123");
+		System.out.println("Report: " + driver.getCapabilities().getCapability("testGridReportUrl"));
 		driver.quit();
 	}
 }
