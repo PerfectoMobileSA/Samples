@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "replace": "grunt replace",
-    "java": "npm run replace && node maven.js"
+    "java": "npm run replace && node maven.js",
+    "ruby": "npm run replace && ruby Ruby/ios/native.rb && ruby Ruby/android/native.rb"
   },
   "repository": {
     "type": "git",
