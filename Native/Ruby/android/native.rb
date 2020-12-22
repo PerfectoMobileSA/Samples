@@ -32,6 +32,5 @@ desired_caps = {
 # Your code goes here
 sleep(5)
 
-puts("Android Report url: "+ @driver.capabilities['testGridReportUrl'])
 # Quits the driver
 @driver.driver_quit
