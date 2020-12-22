@@ -40,7 +40,7 @@ Install the following dependencies on your machine prior as a pre-requisite:
 
 * If you have uploaded your own app update the test case</p>
 
-* Run the following maven commands from terminal/command prompt in the base directory:</p>
+* Run the following maven commands from terminal/command prompt in the base Java directory:</p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - For iOS test:
 

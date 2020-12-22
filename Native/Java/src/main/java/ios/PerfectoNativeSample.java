@@ -53,7 +53,10 @@ public class PerfectoNativeSample {
 				.until(ExpectedConditions.elementToBeClickable(driver.findElementByName("login_email")));
 		email.click();
 		email.sendKeys("123");
+		
+		//Prints the report link
 		System.out.println("Report: " + driver.getCapabilities().getCapability("testGridReportUrl"));
+		//Quits the driver
 		driver.quit();
 	}
 }

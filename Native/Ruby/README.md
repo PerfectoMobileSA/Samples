@@ -52,11 +52,13 @@ This sample shows how to integrate with Perfecto using ruby language.
 
 ## Running the project
 
-Use ruby from command line/ terminal to execute iOS sample:
+- Navigate to Ruby folder.
+
+- Run the below from command line/ terminal to execute iOS sample:
 
   `ruby ios/native.rb`
 
-Use ruby from command line/ terminal to execute Android sample:
+- Run the below from command line/ terminal to execute Android sample:
 
   `ruby android/native.rb`
 
