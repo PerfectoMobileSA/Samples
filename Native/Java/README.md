@@ -1,11 +1,17 @@
-### Sample Java Native App Project
+- [Sample Java Native App Project](#sample-java-native-app-project)
+	- [Dependencies](#dependencies)
+- [Getting Started](#getting-started)
+	- [Running sample as is](#running-sample-as-is)
+	- [Help](#help)
+
+# Sample Java Native App Project
 
 This sample Java native app project is designed to get you up and running within few simple steps.
 
 Begin with installing the dependencies below, and continue with the Getting Started procedure below.
 
-### Dependencies
-There are several prerequisite dependencies you should install on your machine prior to starting to work with this project:
+## Dependencies
+Install the following dependencies on your machine prior as a pre-requisite:
 
 * [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
@@ -18,7 +24,7 @@ There are several prerequisite dependencies you should install on your machine p
 
 ## Running sample as is
 
-* Open `PerfectoNativeSample.java` file in the `ios` or `android` folder.</p>
+* Open `PerfectoNativeSample.java` inside `ios` / `android` folder.</p>
 
 * Search for the below line and replace `<<cloud name>>` with your perfecto cloud name (e.g. demo) </br>  
 		&nbsp;&nbsp;	&nbsp;&nbsp; String cloudName = `"<<cloud name>>"`;
@@ -28,7 +34,7 @@ There are several prerequisite dependencies you should install on your machine p
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String securityToken = `"<<<security token>>"`;
 	</br>
 	</p>
-* Set the device capabilities</p>
+* Set the device capabilities.</p>
 	
 * Set [Perfecto Media repository path](https://developers.perfectomobile.com/display/TT/Upload+a+file+to+the+repository+via+API+using+Postman+or+cURL) of App under test.</p>
 
@@ -46,3 +52,6 @@ There are several prerequisite dependencies you should install on your machine p
 		mvn clean install test -P android 
 
 
+## Help
+
+Please reach out to [Perfecto support](https://support.perfecto.io) in case of any support.

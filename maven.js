@@ -1,5 +1,5 @@
 const mvn = require('maven').create({
-  cwd: './Java'
+  cwd: './Native/Java'
 });
 
 mvn.execute(['clean', 'install', 'test', '-Pios']).then(function () {

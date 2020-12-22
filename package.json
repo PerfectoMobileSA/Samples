@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "replace": "grunt replace",
-    "java": "npm run replace && node maven.js",
-    "ruby": "npm run replace && ruby Ruby/ios/native.rb && ruby Ruby/android/native.rb"
+    "njava": "npm run replace && node maven.js",
+    "nruby": "npm run replace && ruby Native/Ruby/ios/native.rb && ruby Native/Ruby/android/native.rb",
+    "npython": "npm run replace && python Native/Python/ios/native.py && ruby Native/Python/android/native.py"
   },
   "repository": {
     "type": "git",

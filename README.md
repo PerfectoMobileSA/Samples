@@ -6,7 +6,7 @@ Refer to README.md of each individual programming language folders for steps to 
     * cloudName
     * securityToken
 
-<b>Steps for CI:</b></br>
+<b>Steps for Java CI:</b></br>
 1. Run `npm install`
 2. Run `npm install -g grunt`
-3. Run `npm run java`
+3. Run `npm run njava`
