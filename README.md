@@ -6,7 +6,17 @@ Refer to README.md of each individual programming language folders for steps to 
     * cloudName
     * securityToken
 
-<b>Steps for Java CI:</b></br>
-1. Run `npm install`
-2. Run `npm install -g grunt`
-3. Run `npm run njava`
+<b>Note: </b>
+* Regarding cloudName - (e.g. demo is the cloudName of demo.perfectomobile.com).
+* Regarding securityToken - Follow this article: https://developers.perfectomobile.com/display/PD/Generate+security+tokens
+
+<b>Steps for running Native Sample in CI/ terminal/ command prompt:</b></br>
+1. Follow the prerequisites inside README.md of each individual programming language folders.
+2. Run `npm install` from Samples folder
+3. Run `npm install -g grunt`
+4. Run `npm run replace`
+5. Run the following language specific command for executing iOS & Android native app:
+   *  Java: `npm run njava`
+   *  Ruby: `npm run nruby` 
+   *  Javascipt: `npm run njavascript`  
+   *  Python: `npm run npython`

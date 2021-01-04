@@ -1,0 +1,18 @@
+{
+  "name": "appium_native_ios",
+  "version": "1.0.0",
+  "description": "Appium iOS Native app sample script in JS",
+  "main": "ios/native.js",
+  "scripts": {
+    "ios": "node ios/native.js",
+    "android": "node android/native.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "4.0.0-alpha.7"
+  },
+  "engines": {
+    "node": "^6"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}

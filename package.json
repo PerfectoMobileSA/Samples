@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "replace": "grunt replace",
-    "njava": "npm run replace && node maven.js",
-    "nruby": "npm run replace && ruby Native/Ruby/ios/native.rb && ruby Native/Ruby/android/native.rb",
-    "npython": "npm run replace && python Native/Python/ios/native.py && python Native/Python/android/native.py"
+    "njava": "node maven.js",
+    "nruby": "ruby Appium/Native/Ruby/ios/native.rb && ruby Appium/Native/Ruby/android/native.rb",
+    "npython": "python Appium/Native/Python/ios/native.py && python Appium/Native/Python/android/native.py",
+    "njavascript": "cd Appium/Native/Javascript && npm install && node Appium/Native/Javascript/ios/native.js && node Appium/Native/Javascript/android/native.js"
   },
   "repository": {
     "type": "git",
