@@ -22,7 +22,7 @@ desired_caps = {
 
         # Set other capabilities.
         enableAppiumBehavior: true, # Enable new architecture of Appium
-        autoLaunch: true, # To work with hybrid applications, install the iOS/Android application as instrumented.
+        autoLaunch: true, # Whether to have Appium install and launch the app automatically.
         autoInstrument: true, # To work with hybrid applications, install the iOS/Android application as instrumented.
         # fullReset: false, # Whether to install and launch the app automatically.
     }
@@ -37,4 +37,4 @@ sleep(5)
 
 #Quits the driver
 @driver.driver_quit
-    
+puts "Ruby iOS Execution completed"

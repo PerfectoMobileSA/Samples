@@ -11,10 +11,12 @@ capabilities = {
     'securityToken' : "<<security token>>",
     
     # 3. Set device capabilities.
-    'platformName': 'Android',
+    'platformName': 'iOS',
+    'manufacturer': 'Apple',
+    'model': 'iPhone.*',
     
      # 4. Set Perfecto Media repository path of App under test.
-    'app': 'PUBLIC:ExpenseTracker/Native/ExpenseAppVer1.0.apk',
+    'app': 'PUBLIC:Genesis/Sample/iOSInvoiceApp1.0.ipa',
     
     # 5. Set the unique identifier of your app
     'bundleId': 'io.perfecto.expense.tracker',
@@ -34,3 +36,4 @@ time.sleep(5)
 
 #Quits the driver
 driver.quit()
+print("Python iOS Execution completed")

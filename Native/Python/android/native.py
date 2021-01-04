@@ -11,19 +11,17 @@ capabilities = {
     'securityToken' : "<<security token>>",
     
     # 3. Set device capabilities.
-    'platformName': 'iOS',
-    'manufacturer': 'Apple',
-    'model': 'iPhone.*',
+    'platformName': 'Android',
     
      # 4. Set Perfecto Media repository path of App under test.
-    'app': 'PUBLIC:Genesis/Sample/iOSInvoiceApp1.0.ipa',
+    'app': 'PUBLIC:ExpenseTracker/Native/ExpenseAppVer1.0.apk',
     
     # 5. Set the unique identifier of your app
     'bundleId': 'io.perfecto.expense.tracker',
     
     # Set other capabilities.
     'enableAppiumBehavior': True, # Enable new architecture of Appium
-    'autoLaunch': True, # To work with hybrid applications, install the iOS/Android application as instrumented.
+    'autoLaunch': True, # Whether to have Appium install and launch the app automatically.
     'autoInstrument': True, # To work with hybrid applications, install the iOS/Android application as instrumented.
     # 'fullReset': false, # Whether to install and launch the app automatically.
 }
@@ -36,3 +34,4 @@ time.sleep(5)
 
 #Quits the driver
 driver.quit()
+print("Python Android Execution completed")
