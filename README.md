@@ -10,7 +10,8 @@ Refer to README.md of each individual programming language folders for steps to 
 * Regarding cloudName - (e.g. demo is the cloudName of demo.perfectomobile.com).
 * Regarding securityToken - Follow this article: https://developers.perfectomobile.com/display/PD/Generate+security+tokens
 
-<b>Steps for running Native Sample in CI/ terminal/ command prompt:</b></br>
+
+<b>Steps for running Native Sample in terminal/ command prompt:</b></br>
 1. Follow the prerequisites inside README.md of each individual programming language folders.
 2. Run `npm install` from Samples folder
 3. Run `npm install -g grunt`

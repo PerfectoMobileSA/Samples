@@ -1,5 +1,5 @@
 const mvn = require('maven').create({
-  cwd: './Native/Java'
+  cwd: './Appium/Native/Java'
 });
 
 mvn.execute(['clean', 'install', 'test', '-Pios']).then(function () {

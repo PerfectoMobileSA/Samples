@@ -8,7 +8,7 @@
     "android": "node android/native.js"
   },
   "dependencies": {
-    "selenium-webdriver": "4.0.0-alpha.7"
+    "selenium-webdriver": "^4.0.0-alpha.7"
   },
   "engines": {
     "node": "^6"
