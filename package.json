@@ -8,7 +8,7 @@
     "njava": "node maven.js",
     "nruby": "ruby Appium/Native/Ruby/ios/native.rb && ruby Appium/Native/Ruby/android/native.rb",
     "npython": "python Appium/Native/Python/ios/native.py && python Appium/Native/Python/android/native.py",
-    "njavascript": "cd Appium/Native/Javascript && npm install && node Appium/Native/Javascript/ios/native.js && node Appium/Native/Javascript/android/native.js"
+    "njavascript": "cd Appium/Native/Javascript && npm install && node ios/native.js && node android/native.js"
   },
   "repository": {
     "type": "git",
