@@ -26,9 +26,7 @@ public class PerfectoNativeSample {
 
 		// 3. Set device capabilities.
 		capabilities.setCapability("model", "iPhone.*");
-		capabilities.setCapability("platformVersion", "13.*");
 		capabilities.setCapability("platformName", "iOS");
-		capabilities.setCapability("enableAppiumBehavior", true);
 
 		// 4. Set Perfecto Media repository path of App under test.
 		capabilities.setCapability("app", "PUBLIC:Genesis/Sample/iOSInvoiceApp1.0.ipa");
@@ -37,6 +35,7 @@ public class PerfectoNativeSample {
 		capabilities.setCapability("bundleId", "io.perfecto.expense.tracker");
 
 		// Set other capabilities.
+		capabilities.setCapability("enableAppiumBehavior", true);
 		capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
 		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
 		// capabilities.setCapability("fullReset", false); // Reset app state by uninstalling app.
@@ -55,7 +54,7 @@ public class PerfectoNativeSample {
 		email.sendKeys("123");
 		
 		//Prints the report link
-		System.out.println("Report: " + driver.getCapabilities().getCapability("testGridReportUrl"));
+		System.out.println("Native Java iOS Report: " + driver.getCapabilities().getCapability("testGridReportUrl"));
 		//Quits the driver
 		driver.quit();
 	}

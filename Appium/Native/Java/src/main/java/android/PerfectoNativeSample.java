@@ -25,9 +25,7 @@ public class PerfectoNativeSample {
 		capabilities.setCapability("securityToken", securityToken);
 
 		// 3. Set device capabilities.
-		capabilities.setCapability("model", "Galaxy.*");
 		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("enableAppiumBehavior", true);
 
 		// 4. Set Perfecto Media repository path of App under test.
 		capabilities.setCapability("app", "PUBLIC:ExpenseTracker/Native/ExpenseAppVer1.0.apk");
@@ -36,6 +34,7 @@ public class PerfectoNativeSample {
 		capabilities.setCapability("appPackage", "io.perfecto.expense.tracker");
 
 		// Set other capabilities.
+		capabilities.setCapability("enableAppiumBehavior", true); // Enable new Appium Architecture
 		capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
 		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
 		// capabilities.setCapability("fullReset", false); // Reset app state by uninstalling app.
@@ -57,7 +56,7 @@ public class PerfectoNativeSample {
 		email.sendKeys("123");
 		
 		//Prints the report link
-		System.out.println("Report: " + driver.getCapabilities().getCapability("testGridReportUrl"));
+		System.out.println("Native Java Android Report: " + driver.getCapabilities().getCapability("testGridReportUrl"));
 		//Quits the driver
 		driver.quit();
 	}
