@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wVd+MTApLGbLV7vlfAdb2dfy9hf4rj5rXujV+tHKwETOTeX8ZS2ScYsckKJf9so/HqEn+2PuFrUgF9bOkwSRqA==",
+  "dgSpecHash": "WkQMlngzCVGeigKRxU+Dup+Mpm754AmseSqCamed7bo9zzi1mw0yXp2sMzvQZND3cQS1v8tWtD9Td1ml2jxKlg==",
   "success": true,
-  "projectFilePath": "C:\\GT\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Samples\\Appium\\Native\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\appium.webdriver\\4.2.1\\appium.webdriver.4.2.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",

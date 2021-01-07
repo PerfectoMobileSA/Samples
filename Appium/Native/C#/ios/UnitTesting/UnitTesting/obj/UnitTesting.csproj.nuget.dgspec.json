@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GT\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\Samples\\Appium\\Native\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj": {}
   },
   "projects": {
-    "C:\\GT\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\Samples\\Appium\\Native\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GT\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Samples\\Appium\\Native\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj",
         "projectName": "UnitTesting",
-        "projectPath": "C:\\GT\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\Samples\\Appium\\Native\\C#\\ios\\UnitTesting\\UnitTesting\\UnitTesting.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\GT\\C#\\ios\\UnitTesting\\UnitTesting\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\Samples\\Appium\\Native\\C#\\ios\\UnitTesting\\UnitTesting\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [

@@ -10,3 +10,4 @@ package-lock.json
 dist
 Python/__pycache__/Conf.cpython-38.pyc
 Python/Conf.pyc
+.vs

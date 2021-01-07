@@ -7,7 +7,7 @@
 
 ## Pre-requisites
 
-* Install Visual Studio 2019 or above
+* Install Visual Studio Community Edition 2019 or above
 
 </br>  
 ## Setup Project
