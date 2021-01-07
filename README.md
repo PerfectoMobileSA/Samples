@@ -1,6 +1,16 @@
+
+- [Perfecto Samples](#perfecto-samples)
+  - [Prerequisite](#prerequisite)
+  - [Steps for running Native Sample in terminal/ command prompt](#steps-for-running-native-sample-in-terminal-command-prompt)
+
+
+# Perfecto Samples
+[![Build Status](https://tinyurl.com/y4my6c7g)](https://www.perfecto.io/)
+
+
 Refer to README.md of each individual programming language folders for steps to execute sample scripts.
 
-<b>Prerequisite: </b>
+## Prerequisite
   * npm should be installed.
   * Set your Perfecto credentials for the following environmental variables: 
     * cloudName
@@ -11,7 +21,7 @@ Refer to README.md of each individual programming language folders for steps to 
 * Regarding securityToken - Follow this article: https://developers.perfectomobile.com/display/PD/Generate+security+tokens
 
 
-<b>Steps for running Native Sample in terminal/ command prompt:</b></br>
+## Steps for running Native Sample in terminal/ command prompt
 1. Follow the prerequisites inside README.md of each individual programming language folders.
 2. Run `npm install` from Samples folder
 3. Run `npm install -g grunt`
