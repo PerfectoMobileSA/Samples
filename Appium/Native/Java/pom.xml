@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.perfecto</groupId>
-	<artifactId>sampleproject</artifactId>
+	<artifactId>native-java-sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -90,7 +90,7 @@
 			</build>
 		</profile>
 	</profiles>
-	
+
 	<repositories>
 		<repository>
 			<id>repo1.perfectomobile.com</id>
@@ -135,6 +135,16 @@
 		<dependency>
 			<groupId>com.perfectomobile</groupId>
 			<artifactId>http-client</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.perfecto.reporting-sdk</groupId>
+			<artifactId>reportium-java</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.perfecto.reporting-sdk</groupId>
+			<artifactId>reportium-testng</artifactId>
 			<version>RELEASE</version>
 		</dependency>
 		<dependency>
