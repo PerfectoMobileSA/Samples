@@ -25,7 +25,7 @@ var desiredCaps = {
     enableAppiumBehavior: true, // Enable new architecture of Appium
     autoLaunch: true, // Whether to have Appium install and launch the app automatically.
     autoInstrument: true, // To work with hybrid applications, install the iOS/Android application as instrumented.
-    // fullReset: false, // Whether to install and launch the app automatically.
+    // fullReset: false, // Reset app state by uninstalling app
 };
 
 async function testApp() {

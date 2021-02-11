@@ -14,7 +14,7 @@ import com.perfecto.reportium.model.PerfectoExecutionContext;
 import com.perfecto.reportium.model.Project;
 import com.perfecto.reportium.test.TestContext;
 import com.perfecto.reportium.test.result.TestResultFactory;
-
+import org.openqa.selenium.By;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -44,10 +44,8 @@ public class PerfectoNativeSample {
 		// Set other capabilities.
 		capabilities.setCapability("enableAppiumBehavior", true); // Enable new Appium Architecture
 		capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
-		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android
-															// application as instrumented.
-		// capabilities.setCapability("fullReset", false); // Reset app state by
-		// uninstalling app.
+		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
+		// capabilities.setCapability("fullReset", false); // Reset app state by uninstalling app.
 
 		// Initialize the AndroidDriver driver
 		AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
@@ -71,32 +69,31 @@ public class PerfectoNativeSample {
 			reportiumClient.stepStart("Enter email");
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			AndroidElement email = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
-					driver.findElementByXPath("//*[@resource-id=\"io.perfecto.expense.tracker:id/login_email\"]")));
+					driver.findElement(By.id("login_email"))));
 			email.sendKeys("test@perfecto.com");
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Enter password");
 			AndroidElement password = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
-					driver.findElementByXPath("//*[@resource-id=\"io.perfecto.expense.tracker:id/login_password\"]")));
+					driver.findElement(By.id("login_password"))));
 			password.sendKeys("test123");
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Click login");
 			AndroidElement login = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
-					driver.findElementByXPath("//*[@resource-id=\"io.perfecto.expense.tracker:id/login_login_btn\"]")));
+					driver.findElement(By.id("login_login_btn"))));
 			login.click();
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Add expense");
 			AndroidElement add_expense = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
-					driver.findElementByXPath("//*[@resource-id=\"io.perfecto.expense.tracker:id/list_add_btn\"]")));
+					driver.findElement(By.id("list_add_btn"))));
 			add_expense.click();
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Select head");
-			AndroidElement head = (AndroidElement) wait
-					.until(ExpectedConditions.elementToBeClickable(driver.findElementByXPath(
-							"//*[@resource-id=\"io.perfecto.expense.tracker:id/input_layout_head\"]//*[@password=\"false\"]")));
+			AndroidElement head = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
+					driver.findElement(By.id("input_layout_head"))));
 			head.click();
 			AndroidElement flight_option = (AndroidElement) wait
 					.until(ExpectedConditions.elementToBeClickable(driver.findElementByXPath("//*[@text=\"Flight\"]")));
@@ -105,14 +102,21 @@ public class PerfectoNativeSample {
 
 			reportiumClient.stepStart("Enter amount");
 			AndroidElement amount = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
-					driver.findElementByXPath("//*[@resource-id=\"io.perfecto.expense.tracker:id/add_amount\"]")));
+				driver.findElement(By.id("add_amount"))));
 			amount.sendKeys("100");
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Save expense");
 			AndroidElement save_expense = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
-					driver.findElementByXPath("//*[@resource-id=\"io.perfecto.expense.tracker:id/layout_buttons\"]")));
+				driver.findElement(By.id("layout_buttons"))));
 			save_expense.click();
+			reportiumClient.stepEnd();
+
+			reportiumClient.stepStart("Verify alert");
+			String expectedText = "Select Currency";
+			AndroidElement alert = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
+					driver.findElementByXPath("//*[ @text='" + expectedText + "']")));
+			reportiumClient.reportiumAssert(expectedText, alert.getText().equalsIgnoreCase(expectedText));
 			reportiumClient.stepEnd();
 
 			reportiumClient.testStop(TestResultFactory.createSuccess());

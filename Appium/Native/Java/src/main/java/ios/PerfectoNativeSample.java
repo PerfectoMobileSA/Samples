@@ -49,8 +49,7 @@ public class PerfectoNativeSample {
 		// Set other capabilities.
 		capabilities.setCapability("enableAppiumBehavior", true);
 		capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
-		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android
-															// application as instrumented.
+		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
 		// capabilities.setCapability("fullReset", false); // Reset app state by  uninstalling app.
 
 		// Initialize the IOSDriver driver
@@ -106,15 +105,22 @@ public class PerfectoNativeSample {
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Enter amount");
-			IOSElement amount = (IOSElement) new WebDriverWait(driver, 30)
-					.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("edit_amount"))));
+			IOSElement amount = (IOSElement) wait
+			.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("edit_amount"))));
 			amount.sendKeys("100");
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Save expense");
-			IOSElement save_expense = (IOSElement) new WebDriverWait(driver, 30)
-					.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("add_save_btn"))));
+			IOSElement save_expense = (IOSElement) wait
+			.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("add_save_btn"))));
 			save_expense.click();
+			reportiumClient.stepEnd();
+
+			reportiumClient.stepStart("Verify alert");
+			String expectedText = "Please enter valid category";
+			IOSElement alert = (IOSElement) wait
+			.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name(expectedText))));
+			reportiumClient.reportiumAssert(expectedText, alert.getText().equalsIgnoreCase(expectedText));
 			reportiumClient.stepEnd();
 
 			reportiumClient.testStop(TestResultFactory.createSuccess());

@@ -23,6 +23,8 @@ This sample shows how to integrate with Perfecto using ruby language.
 
 - Run the following commands in command line/ terminal:
 
+      gem install selenium-webdriver
+      gem install perfecto-reporting
       gem install appium_lib
 
 </br>

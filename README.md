@@ -8,7 +8,9 @@
 [![Build Status](https://tinyurl.com/y4my6c7g)](https://www.perfecto.io/)
 
 
-Refer to README.md of each individual programming language folders for steps to execute sample scripts.
+Refer to README.md of each individual programming language folders for steps to execute sample scripts. 
+
+Sample apps are present inside sample_apps folder.
 
 ## Prerequisite
   * npm should be installed.
