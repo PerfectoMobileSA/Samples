@@ -26,7 +26,7 @@ namespace Android
             capabilities.PlatformName = "Android";
 
             // 4. Set Perfecto Media repository path of App under test.
-            capabilities.AddAdditionalCapability("app", "PUBLIC:ExpenseTracker/Native/ExpenseAppVer1.0.apk");
+            capabilities.AddAdditionalCapability("app", "PUBLIC:ExpenseTracker/Native/android/ExpenseAppVer1.0.apk");
 
             // 5. Set the unique identifier of your app
             capabilities.AddAdditionalCapability("appPackage", "io.perfecto.expense.tracker");

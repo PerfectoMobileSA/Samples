@@ -26,7 +26,7 @@ namespace IOS
             capabilities.PlatformName = "iOS";
 
             // 4. Set Perfecto Media repository path of App under test.
-            capabilities.AddAdditionalCapability("app", "PUBLIC:Genesis/Sample/iOSInvoiceApp1.0.ipa");
+            capabilities.AddAdditionalCapability("app", "PUBLIC:ExpenseTracker/Native/iOS/InvoiceApp1.0.ipa");
 
             // 5. Set the unique identifier of your app
             capabilities.AddAdditionalCapability("appPackage", "io.perfecto.expense.tracker");
