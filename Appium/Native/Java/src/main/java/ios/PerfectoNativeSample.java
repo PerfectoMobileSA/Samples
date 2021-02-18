@@ -41,7 +41,7 @@ public class PerfectoNativeSample {
 		capabilities.setCapability("model", "iPhone.*");
 
 		// 4. Set Perfecto Media repository path of App under test.
-		capabilities.setCapability("app", "PUBLIC:Genesis/Sample/iOSInvoiceApp1.0.ipa");
+		capabilities.setCapability("app", "PUBLIC:ExpenseTracker/Native/iOS/InvoiceApp1.0.ipa");
 
 		// 5. Set the unique identifier of your app
 		capabilities.setCapability("bundleId", "io.perfecto.expense.tracker");
@@ -58,7 +58,7 @@ public class PerfectoNativeSample {
 				capabilities);
 
 		// Setting implicit wait
-		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		PerfectoExecutionContext perfectoExecutionContext = new PerfectoExecutionContext.PerfectoExecutionContextBuilder()
 				.withProject(new Project("Sample Project", "1.0")).withWebDriver(driver)

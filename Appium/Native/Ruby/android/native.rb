@@ -14,10 +14,10 @@ desired_caps = {
         platformName: 'Android',
 
         # 4. Set Perfecto Media repository path of App under test.
-        app: 'PUBLIC:ExpenseTracker/Native/ExpenseAppVer1.0.apk',
+        app: 'PUBLIC:ExpenseTracker/Native/android/ExpenseAppVer1.0.apk',
         
         # 5. Set the unique identifier of your app
-        bundleId: 'io.perfecto.expense.tracker',
+        appPackage: 'io.perfecto.expense.tracker',
 
         # Set other capabilities.
         enableAppiumBehavior: true, # Enable new architecture of Appium

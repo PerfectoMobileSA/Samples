@@ -16,7 +16,7 @@ desired_caps = {
           model: 'iPhone.*',
   
           # 4. Set Perfecto Media repository path of App under test.
-          app: 'PUBLIC:Genesis/Sample/iOSInvoiceApp1.0.ipa',
+          app: 'PUBLIC:ExpenseTracker/Native/iOS/InvoiceApp1.0.ipa',
           
           # 5. Set the unique identifier of your app
           bundleId: 'io.perfecto.expense.tracker',
@@ -71,7 +71,7 @@ begin
     @reportiumClient.stepEnd()
 
     @reportiumClient.stepStart('Enter amount')
-    wait.until{ @driver.find_element(:name => 'edit_head').displayed? }
+    wait.until{ @driver.find_element(:name => 'edit_amount').displayed? }
     @driver.find_element(:name => 'edit_amount').send_keys('100') 
     @reportiumClient.stepEnd()
 

@@ -29,11 +29,13 @@ Install the following:
  3. Run the following command from terminal/ command prompt to install project dependencies:
     - Mac:
     
-          pip3 install selenium
+          pip3 install selenium==3.141.0
+          pip3 install appium-Python-Client==1.0.2
 
     - Windows:
   
-          pip install selenium
+          pip install selenium==3.141.0
+          pip install appium-Python-Client==1.0.2
 
     </br>
 

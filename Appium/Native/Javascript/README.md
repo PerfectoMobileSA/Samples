@@ -11,7 +11,7 @@ The project demonstrates a sample native app automation with Perfecto
 </br>
 
 ## Getting started
-- Navigate to Javascript Folder. 
+- Navigate to ios/ android folder in terminal/ command prompt. 
 - Run the below command to install node dependencies with this command:
 
       npm install
@@ -20,7 +20,7 @@ The project demonstrates a sample native app automation with Perfecto
 
 ## Integration With Perfecto
 
-1. Open native.js within ios/ android folder.
+1. Open native.js within ios/ android folder in  terminal/ command prompt.
    
 2. Replace <\<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
 
@@ -41,13 +41,9 @@ The project demonstrates a sample native app automation with Perfecto
 ## Running the test
 
 
-Run the below command to execute ios sample:
+Run the below command to execute the sample test:
 
-    npm run ios
-
-Run the below command to execute android sample:
-
-    npm run android 
+    npm run test
 
 </br>
 

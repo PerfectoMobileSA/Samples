@@ -36,7 +36,7 @@ public class PerfectoNativeSample {
 		capabilities.setCapability("platformName", "Android");
 
 		// 4. Set Perfecto Media repository path of App under test.
-		capabilities.setCapability("app", "PUBLIC:ExpenseTracker/Native/ExpenseAppVer1.0.apk");
+		capabilities.setCapability("app", "PUBLIC:ExpenseTracker/Native/android/ExpenseAppVer1.0.apk");
 
 		// 5. Set the unique identifier of your app
 		capabilities.setCapability("appPackage", "io.perfecto.expense.tracker");
@@ -54,7 +54,7 @@ public class PerfectoNativeSample {
 				capabilities);
 
 		// Setting implicit wait
-		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		PerfectoExecutionContext perfectoExecutionContext = new PerfectoExecutionContext.PerfectoExecutionContextBuilder()
 				.withProject(new Project("Sample Project", "1.0")).withWebDriver(driver)
