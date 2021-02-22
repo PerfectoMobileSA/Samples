@@ -18,7 +18,8 @@ describe('Selenium NodeJS', () => {
         browser.reportingClient.stepStart('Select Perfecto');
         var q = element(by.xpath('(//*[text()="' + search + '"])[1]'));
         browser.wait(EC.elementToBeClickable(q), timeout);
-        q.click();
+        browser.pause(4000);
+        browser.executeScript("arguments[0].click()", q);
         browser.reportingClient.stepEnd();
 
         browser.reportingClient.stepStart('Navigate to Perfecto');
