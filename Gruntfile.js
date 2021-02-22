@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
@@ -14,13 +14,13 @@ module.exports = function(grunt) {
     },
     replace: {
       creds: {
-        src: ['**/**/Java/**/*.java', "**/**/Ruby/**/*.rb", "**/**/Python/**/*.py", "Appium/**/Javascript/wdio/ios/*.js", "Appium/**/Javascript/wdio/android/*.js", "Appium/**/C#/**/**/**/*.cs"],
-        overwrite: true,  
+        src: ['**/**/Java/**/*.java', "**/**/Ruby/**/*.rb", "**/**/Python/**/*.py", "Appium/**/Javascript/wdio/ios/*.js", "Appium/**/Javascript/wdio/android/*.js", "Appium/**/C#/**/**/**/*.cs", "Selenium/Javascript/protractor/*.js", 'Selenium/Java/**/*.java', "Selenium/Ruby/**/*.rb", "Selenium/Python/**/*.py"],
+        overwrite: true,
         replacements: [{
           from: "<<cloud name>>",
           to: process.env.cloudName
         }, {
-          from: "<<security token>>",  
+          from: "<<security token>>",
           to: process.env.securityToken
         }]
       }

@@ -33,8 +33,13 @@ desired_caps = {
 @driver.manage.timeouts.implicit_wait = 5
 
 # Initialize Smart Reporting
-perfectoExecutionContext = PerfectoExecutionContext.new(PerfectoExecutionContext::PerfectoExecutionContextBuilder
-        .withWebDriver(@driver).build)
+if ENV["jobName"] != nil
+    perfectoExecutionContext = PerfectoExecutionContext.new(PerfectoExecutionContext::PerfectoExecutionContextBuilder
+    .withWebDriver(@driver).withJob(Job.new(ENV["jobName"], ENV["jobNumber"].to_i)).build)
+else
+    perfectoExecutionContext = PerfectoExecutionContext.new(PerfectoExecutionContext::PerfectoExecutionContextBuilder
+            .withWebDriver(@driver).build)
+end
 @reportiumClient = PerfectoReportiumClient.new(perfectoExecutionContext)
 tec = TestContext::TestContextBuilder.build()
 @reportiumClient.testStart("Native Ruby Android Sample", tec)

@@ -60,9 +60,18 @@ public class PerfectoNativeSample {
 		// Setting implicit wait
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-		PerfectoExecutionContext perfectoExecutionContext = new PerfectoExecutionContext.PerfectoExecutionContextBuilder()
-				.withProject(new Project("Sample Project", "1.0")).withWebDriver(driver)
-				.build();
+		PerfectoExecutionContext perfectoExecutionContext;
+		if (System.getProperty("jobName") != null) {
+			perfectoExecutionContext = new PerfectoExecutionContext.PerfectoExecutionContextBuilder()
+					.withProject(new Project("My Project", "1.0"))
+					.withJob(new Job(System.getProperty("jobName"),
+							Integer.parseInt(System.getProperty("jobNumber"))))
+					.withWebDriver(driver).build();
+		} else {
+			perfectoExecutionContext = new PerfectoExecutionContext.PerfectoExecutionContextBuilder()
+					.withProject(new Project("My Project", "1.0"))
+					.withWebDriver(driver).build();
+		}
 		ReportiumClient reportiumClient = new ReportiumClientFactory()
 				.createPerfectoReportiumClient(perfectoExecutionContext);
 

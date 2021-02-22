@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.perfecto</groupId>
-	<artifactId>native-java-sample</artifactId>
+	<artifactId>web-java-sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -56,7 +56,7 @@
 									<goal>java</goal>
 								</goals>
 								<configuration>
-									<mainClass>ios.PerfectoNativeSample</mainClass>
+									<mainClass>ios.Sample</mainClass>
 									<classpathScope>test</classpathScope>
 								</configuration>
 							</execution>
@@ -80,7 +80,31 @@
 									<goal>java</goal>
 								</goals>
 								<configuration>
-									<mainClass>android.PerfectoNativeSample</mainClass>
+									<mainClass>android.Sample</mainClass>
+									<classpathScope>test</classpathScope>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>web</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.1.1</version>
+						<executions>
+							<execution>
+								<phase>install</phase>
+								<goals>
+									<goal>java</goal>
+								</goals>
+								<configuration>
+									<mainClass>web.Sample</mainClass>
 									<classpathScope>test</classpathScope>
 								</configuration>
 							</execution>
@@ -200,7 +224,7 @@
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
-			<version>7.2.0</version>
+			<version>7.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>

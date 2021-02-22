@@ -1,0 +1,18 @@
+{
+  "name": "jasmine-protractor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^3.5.0",
+    "perfecto-reporting": "^2.5.3",
+    "protractor": "^7.0.0"
+  },
+  "scripts": {
+    "android": "protractor android_config.js",
+    "web": "protractor web_config.js"
+  },
+  "license": "ISC",
+  "author": ""
+}

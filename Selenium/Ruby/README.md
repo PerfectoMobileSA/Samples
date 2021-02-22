@@ -1,6 +1,6 @@
 - [Perfecto Sample for Ruby](#perfecto-sample-for-ruby)
   - [Getting Started](#getting-started)
-- [Native App](#native-app)
+- [Selenium](#selenium)
   - [Integration With Perfecto](#integration-with-perfecto)
   - [Running the project](#running-the-project)
   - [CI Integration](#ci-integration)
@@ -8,7 +8,7 @@
 
 # Perfecto Sample for Ruby
 
-This sample shows how to integrate with Perfecto using ruby language. 
+This sample shows how to integrate Selenium with Perfecto using ruby language. 
 
 </br>
 
@@ -30,11 +30,11 @@ This sample shows how to integrate with Perfecto using ruby language.
 
 </br>
 
-# Native App
+# Selenium
 
 ## Integration With Perfecto
 
-1. Open native.rb
+1. Open sample.rb
    
 2. Replace <\<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
 
@@ -57,13 +57,13 @@ This sample shows how to integrate with Perfecto using ruby language.
 
 - Navigate to Ruby folder.
 
-- Run the below from command line/ terminal to execute iOS sample:
+- Run the below from command line/ terminal to execute web sample:
 
-  `ruby ios/native.rb`
+  `ruby web/sample.rb`
 
 - Run the below from command line/ terminal to execute Android sample:
 
-  `ruby android/native.rb`
+  `ruby android/sample.rb`
 
 </br>
 
@@ -74,11 +74,11 @@ Run the following commands to integrate with Smart Reporting CI Dashboard:
 
 Android:
 
-    jobName=${JOB_NAME} jobNumber=${BUILD_NUMBER} ruby android/native.rb
+    jobName=${JOB_NAME} jobNumber=${BUILD_NUMBER} ruby android/sample.rb
 
-ios:
+Web:
 
-    jobName=${JOB_NAME} jobNumber=${BUILD_NUMBER} ruby ios/native.rb
+    jobName=${JOB_NAME} jobNumber=${BUILD_NUMBER} ruby web/sample.rb
 
 where \${JOB_NAME} corresponds to job name and \${BUILD_NUMBER} corresponds to job number.
 

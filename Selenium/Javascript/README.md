@@ -1,4 +1,4 @@
-- [JS Native app sample](#js-native-app-sample)
+- [JS Selenium sample](#js-selenium-sample)
   - [Getting started](#getting-started)
   - [Integration With Perfecto](#integration-with-perfecto)
   - [Running the test](#running-the-test)
@@ -6,13 +6,13 @@
   - [Help](#help)
   
 
-# JS Native app sample
-The project demonstrates a sample native app automation with Perfecto
+# JS Selenium sample
+The project demonstrates a sample selenium automation with Perfecto
 
 </br>
 
 ## Getting started
-- Navigate to wdio folder in terminal/ command prompt. 
+- Navigate to protractor folder in terminal/ command prompt. 
 - Run the below command to install node dependencies with this command:
 
       npm install
@@ -21,49 +21,40 @@ The project demonstrates a sample native app automation with Perfecto
 
 ## Integration With Perfecto
 
-1. Open native.js within ios/ android folder in  terminal/ command prompt.
+1. Open sample.js in terminal/ command prompt.
    
 2. Replace <\<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
 
 3. Replace <\<security token>> with your perfecto security token.
 
-4. Set device capabilities.
-
-5. Set [Perfecto Media repository path](https://developers.perfectomobile.com/display/TT/Upload+a+file+to+the+repository+via+API+using+Postman+or+cURL) of App under test.
-
-6. Set the unique identifier of your app.
-
-7. Set other capabilities if required.
+4. Set preferred device/ web capabilities.
    
-8. Add your code as applicable.
+5. Add your code as applicable.
 
 </br>
 
 ## Running the test
 
-
-Run the below command to execute the iOS sample:
-
-    npm run ios
-
 Run the below command to execute the android sample:
 
     npm run android
 
+Run the below command to execute the web sample:
 
+    npm run web
 </br>
 
 ## CI Integration
 
 Run the following commands to integrate with Smart Reporting CI Dashboard:
 
-ios:
-
-    jobName=${JOB_NAME} jobNumber=${BUILD_NUMBER} npm run ios
-
-android:
+Android:
 
     jobName=${JOB_NAME} jobNumber=${BUILD_NUMBER} npm run android
+
+Web:
+
+    jobName=${JOB_NAME} jobNumber=${BUILD_NUMBER} npm run web
 
 where \${JOB_NAME} corresponds to job name and \${BUILD_NUMBER} corresponds to job number.
 

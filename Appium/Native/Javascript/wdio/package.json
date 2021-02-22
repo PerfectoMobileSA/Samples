@@ -4,7 +4,8 @@
   "description": "",
   "main": "native.js",
   "scripts": {
-    "test": "wdio ./conf.js"
+    "ios": "wdio ./ios/conf.js",
+    "android": "wdio ./android/conf.js"
   },
   "author": "",
   "license": "ISC",

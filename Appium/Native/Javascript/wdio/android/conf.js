@@ -41,8 +41,7 @@ exports.config = {
             autoLaunch: true, // Whether to have Appium install and launch the app automatically.
             autoInstrument: true, // To work with hybrid applications, install the iOS/Android application as instrumented.
             // fullReset: false, // Reset app state by uninstalling app
-            browserName: '',
-            // newCommandTimeout: 30 * 60000
+            browserName: ''
         },
     ],
     // Default timeout for all waitFor* commands.
@@ -72,15 +71,30 @@ exports.config = {
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
     before: function (capabilities, specs) {
-        reportingClient = new Reporting.Perfecto.PerfectoReportingClient(new Reporting.Perfecto.PerfectoExecutionContext({
-            webdriver: {
-                executeScript: (command, params) => {
-                    return browser.execute(command, params);
-                }
-
-            },
-            tags: tags
-        }));
+        if (process.env.jobName != null) {
+            reportingClient = new Reporting.Perfecto.PerfectoReportingClient(new Reporting.Perfecto.PerfectoExecutionContext({
+                webdriver: {
+                    executeScript: (command, params) => {
+                        return browser.execute(command, params);
+                    }
+                },
+                job: new perfectoReporting.Model.Job({
+                    jobName: process.env.jobName,
+                    buildNumber: parseInt(process.env.jobNumber)
+                }),
+                tags: tags
+            }));
+        } else {
+            reportingClient = new Reporting.Perfecto.PerfectoReportingClient(new Reporting.Perfecto.PerfectoExecutionContext({
+                webdriver: {
+                    executeScript: (command, params) => {
+                        return browser.execute(command, params);
+                    }
+                },
+                tags: tags
+            }));
+        }
+        
         browser.reportingClient = reportingClient;
 
         var myReporter = {
