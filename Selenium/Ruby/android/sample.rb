@@ -13,6 +13,7 @@ desired_caps = {
         
         # 3. Set device capabilities.
         platformName: 'Android',
+        model: 'Galaxy S.*',
 
         # Set other capabilities.
         browserName: 'mobileOS',

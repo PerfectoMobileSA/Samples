@@ -13,7 +13,7 @@ exports.config = {
 
             // 3. Set device capabilities.
             platformName: 'Android',
-            model: 'Galaxy.*',
+            model: 'Galaxy S.*',
 
             // Set other capabilities.
             browserName: 'mobileOS',

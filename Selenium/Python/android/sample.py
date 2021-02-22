@@ -9,8 +9,11 @@ cloudName = "<<cloud name>>"
 capabilities = {
     #  2. Replace <<security token>> with your perfecto security token.
     "securityToken": "<<security token>>",
+    
     # 3. Set device capabilities.
     "platformName": "Android",
+    "model": 'Galaxy S.*',
+    
     # Set other capabilities.
     "browserName": "mobileOS",
     "useAppiumForWeb": True,

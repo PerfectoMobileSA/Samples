@@ -37,6 +37,7 @@ public class Sample {
 
 		// 3. Set device capabilities.
 		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("model", "Galaxy S.*");
 
 		// 4. Other capabilities
 		capabilities.setCapability("useAppiumForWeb", true);
