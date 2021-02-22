@@ -11,13 +11,13 @@ describe('Selenium NodeJS', () => {
 
         browser.reportingClient.stepStart('Search for Perfecto');
         var q = element(by.name('q'));
-        browser.wait(EC.presenceOf(q), timeout);
+        browser.wait(EC.elementToBeClickable(q), timeout);
         q.sendKeys(search);
         browser.reportingClient.stepEnd();
 
         browser.reportingClient.stepStart('Select Perfecto');
         var q = element(by.xpath('(//*[text()="' + search + '"])[1]'));
-        browser.wait(EC.presenceOf(q), timeout);
+        browser.wait(EC.elementToBeClickable(q), timeout);
         q.click();
         browser.reportingClient.stepEnd();
 
