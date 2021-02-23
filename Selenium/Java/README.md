@@ -7,7 +7,7 @@
 
 # Sample Java Selenium App Project
 
-This sample Java Selenbium project is designed to get you up and running within few simple steps.
+This sample Java Selenium project is designed to get you up and running within few simple steps.
 
 Begin with installing the dependencies below, and continue with the Getting Started procedure below.
 
