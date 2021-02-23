@@ -79,12 +79,12 @@ public class Sample {
 			driver.get("https://www.google.com");
 			reportiumClient.stepEnd();
 
-			reportiumClient.stepStart("Search for Perfecto");
+			reportiumClient.stepStart("Search for " + search);
 			WebElement email = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@name='q']"))));
 			email.sendKeys(search);
 			reportiumClient.stepEnd();
 
-			reportiumClient.stepStart("Select Perfecto");
+			reportiumClient.stepStart("Select " + search);
 			WebElement searchItem = wait.until(ExpectedConditions
 					.elementToBeClickable(driver.findElement(By.xpath("(//*[text()='" + search + "'])[1]"))));
 			searchItem.click();

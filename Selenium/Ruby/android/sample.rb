@@ -46,12 +46,12 @@ begin
     @driver.get('https://www.google.com');
     @reportiumClient.stepEnd();
 
-    @reportiumClient.stepStart('Search for Perfecto');
+    @reportiumClient.stepStart('Search for ' + search);
     wait.until{ @driver.find_element(:name => 'q') }
     @driver.find_element(:name => 'q').send_keys(search)
     @reportiumClient.stepEnd();
 
-    @reportiumClient.stepStart('Select Perfecto');
+    @reportiumClient.stepStart('Select ' + search);
     wait.until{ @driver.find_element(:xpath => '(//*[text()="' + search + '"])[1]').displayed? }
     @driver.find_element(:xpath => '(//*[text()="' + search + '"])[1]').click
     @reportiumClient.stepEnd();

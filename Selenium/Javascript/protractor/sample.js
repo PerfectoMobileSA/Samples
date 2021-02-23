@@ -9,16 +9,14 @@ describe('Selenium NodeJS', () => {
         browser.driver.get('https://www.google.com');
         browser.reportingClient.stepEnd();
 
-        browser.reportingClient.stepStart('Search for Perfecto');
+        browser.reportingClient.stepStart('Search for ' + search);
         var q = element(by.name('q'));
         browser.wait(EC.elementToBeClickable(q), timeout);
         q.sendKeys(search);
         browser.reportingClient.stepEnd();
 
-        browser.reportingClient.stepStart('Select Perfecto');
-        var q = element(by.xpath('(//*[text()="' + search + '"])[1]'));
+        browser.reportingClient.stepStart('Select ' + search);
         browser.wait(EC.elementToBeClickable(q), timeout);
-        browser.sleep(4000);
         browser.executeScript("arguments[0].click()", q);
         browser.actions().sendKeys(protractor.Key.ENTER).perform();
         browser.reportingClient.stepEnd();

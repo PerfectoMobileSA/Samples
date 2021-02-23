@@ -17,7 +17,10 @@ exports.config = {
             browserName: 'Chrome',
             browserVersion: 'latest',
             location: 'US East',
-            resolution: '1024x768'
+            resolution: '1024x768',
+            'goog:chromeOptions': {
+                w3c: false
+            }
         }
     ],
     //default page loading timeout in ms
