@@ -4,6 +4,7 @@ describe('Selenium NodeJS', () => {
     let EC = protractor.ExpectedConditions;
     let timeout = 30000;
     var search = "perfectomobile";
+    browser.waitForAngular();
     it('Sample', function () {
         browser.reportingClient.stepStart('Navigate to Google');
         browser.driver.get('https://www.google.com');
@@ -23,6 +24,7 @@ describe('Selenium NodeJS', () => {
 
         browser.reportingClient.stepStart('Navigate to Perfecto');
         var href = element(by.xpath('(//*[contains(@href,"https://www.perfecto.io/")])[1]'));
+        browser.wait(EC.urlContains(search), timeout);
         browser.executeScript("arguments[0].scrollIntoView()", href);
         browser.wait(EC.elementToBeClickable(href), timeout);
         browser.executeScript("arguments[0].click()", href);
