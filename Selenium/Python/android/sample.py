@@ -17,6 +17,8 @@ capabilities = {
     # Set other capabilities.
     "browserName": "mobileOS",
     "useAppiumForWeb": True,
+    "openDeviceTimeout": 5
+    
 }
 # Initialize the Appium driver
 driver = webdriver.Remote(

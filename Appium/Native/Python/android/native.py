@@ -27,6 +27,9 @@ capabilities = {
     'autoLaunch': True, # Whether to have Appium install and launch the app automatically.
     'autoInstrument': True, # To work with hybrid applications, install the iOS/Android application as instrumented.
     # 'fullReset': false, # Reset app state by uninstalling app
+    'takesScreenshot': False,
+    'screenshotOnError': True,
+    'openDeviceTimeout': 5
 }
 # Initialize the Appium driver
 driver = webdriver.Remote('https://' + cloudName + '.perfectomobile.com/nexperience/perfectomobile/wd/hub', capabilities)

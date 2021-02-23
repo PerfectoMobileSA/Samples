@@ -44,7 +44,6 @@ public class Sample {
 		// Set other capabilities.
 		capabilities.setCapability("takesScreenshot", false);
 		capabilities.setCapability("screenshotOnError", true);
-		
 
 		// Initialize the  driver
 		RemoteWebDriver driver = new RemoteWebDriver(

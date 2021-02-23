@@ -16,6 +16,8 @@ capabilities = {
     "browserVersion": "latest",
     "location": "US East",
     "resolution": "1024x768",
+    "takesScreenshot": False,
+    "screenshotOnError": True
 }
 # Initialize the Appium driver
 driver = webdriver.Remote(

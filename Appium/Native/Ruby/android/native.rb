@@ -24,6 +24,9 @@ desired_caps = {
         autoLaunch: true, # Whether to have Appium install and launch the app automatically.
         autoInstrument: true, # To work with hybrid applications, install the iOS/Android application as instrumented.
         # fullReset: false, # Reset app state by uninstalling app
+        takesScreenshot: false,
+        screenshotOnError: true,
+        openDeviceTimeout: 5
     }
 }
 # Initialize the Appium driver

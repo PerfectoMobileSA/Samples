@@ -36,6 +36,9 @@ namespace IOS
             capabilities.AddAdditionalCapability("autoLaunch", true); // Whether to install and launch the app automatically.
             capabilities.AddAdditionalCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
             // capabilities.AddAdditionalCapability("fullReset", false); // Reset app state by uninstalling app.
+            capabilities.AddAdditionalCapability("takesScreenshot", false);
+            capabilities.AddAdditionalCapability("screenshotOnError", true);
+            capabilities.AddAdditionalCapability("openDeviceTimeout", 5);
 
             // Initialize the Appium driver
             IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(

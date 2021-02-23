@@ -17,7 +17,8 @@ desired_caps = {
 
         # Set other capabilities.
         browserName: 'mobileOS',
-        useAppiumForWeb: true
+        useAppiumForWeb: true,
+        openDeviceTimeout: 5
     }
 }
 # Initialize the Appium driver

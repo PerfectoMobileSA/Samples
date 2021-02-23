@@ -51,6 +51,9 @@ public class PerfectoNativeSample {
 		capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
 		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
 		// capabilities.setCapability("fullReset", false); // Reset app state by  uninstalling app.
+		capabilities.setCapability("takesScreenshot", false);
+		capabilities.setCapability("screenshotOnError", true);
+		capabilities.setCapability("openDeviceTimeout", 5);
 
 		// Initialize the IOSDriver driver
 		IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(

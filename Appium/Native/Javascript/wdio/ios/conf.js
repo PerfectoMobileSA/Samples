@@ -42,6 +42,9 @@ exports.config = {
             autoInstrument: true, // To work with hybrid applications, install the iOS/Android application as instrumented.
             // fullReset: false, // Reset app state by uninstalling app
             browserName: '',
+            takesScreenshot: false,
+            screenshotOnError: true,
+            openDeviceTimeout: 5
         },
     ],
     // Default timeout for all waitFor* commands.

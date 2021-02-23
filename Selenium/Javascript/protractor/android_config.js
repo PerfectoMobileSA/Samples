@@ -17,7 +17,8 @@ exports.config = {
 
             // Set other capabilities.
             browserName: 'mobileOS',
-            useAppiumForWeb: true
+            useAppiumForWeb: true,
+            openDeviceTimeout: 5
         }
     ],
     //default page loading timeout in ms

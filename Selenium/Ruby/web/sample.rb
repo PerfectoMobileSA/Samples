@@ -14,7 +14,9 @@ capabilities = {
         browserName: 'Chrome',
         browserVersion: 'latest',
         location: 'US East',
-        resolution: '1024x768'
+        resolution: '1024x768',
+        takesScreenshot: false,
+        screenshotOnError: true
 }
 # Initialize the driver
 @driver = Selenium::WebDriver.for(:remote, :url => server_url, :desired_capabilities => capabilities)

@@ -41,6 +41,7 @@ public class Sample {
 
 		// 4. Other capabilities
 		capabilities.setCapability("useAppiumForWeb", true);
+		capabilities.setCapability("openDeviceTimeout", 5);
 
 		// Initialize the driver
 		RemoteWebDriver driver = new RemoteWebDriver(new URL("https://" + cloudName.replace(".perfectomobile.com", "")
