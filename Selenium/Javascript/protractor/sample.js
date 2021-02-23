@@ -19,12 +19,14 @@ describe('Selenium NodeJS', () => {
         browser.reportingClient.stepStart('Select ' + search);
         browser.wait(EC.elementToBeClickable(q), timeout);
         browser.executeScript("arguments[0].click()", q);
+        browser.sleep(3000);
         browser.actions().sendKeys(protractor.Key.ENTER).perform();
         browser.reportingClient.stepEnd();
 
         browser.reportingClient.stepStart('Navigate to Perfecto');
         var href = element(by.xpath('(//*[contains(@href,"https://www.perfecto.io/")])[1]'));
         browser.wait(EC.urlContains(search), timeout);
+        browser.wait(EC.elementToBeClickable(href), timeout);
         browser.executeScript("arguments[0].scrollIntoView()", href);
         browser.wait(EC.elementToBeClickable(href), timeout);
         browser.executeScript("arguments[0].click()", href);
