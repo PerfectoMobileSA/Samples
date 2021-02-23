@@ -21,7 +21,7 @@ exports.config = {
     bail: 0,
     exclude: [],
     specs: [
-        'native.js'
+        'ios/native.js'
     ],
     maxInstances: 1,
 

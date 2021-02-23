@@ -22,7 +22,7 @@ exports.config = {
     bail: 0,
     exclude: [],
     specs: [
-        'native.js'
+        'android/native.js'
     ],
     maxInstances: 1,
 

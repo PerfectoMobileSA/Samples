@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "replace": "grunt replace",
-    "njava": "cd Appium/Native/Java && mvn clean install -P android  && mvn clean install -P ios ",
+    "njava": "cd Appium/Native/Java && mvn clean install -P android -DjobName=$jobName -DjobNumber=$jobNumber && mvn clean install -P ios -DjobName=$jobName -DjobNumber=$jobNumber",
     "nruby": "ruby Appium/Native/Ruby/ios/native.rb && ruby Appium/Native/Ruby/android/native.rb",
     "npython": "python Appium/Native/Python/ios/native.py && python Appium/Native/Python/android/native.py",
     "njavascript": "cd Appium/Native/Javascript/wdio && npm install && npm run ios && npm run android",
     "wjavascript": "cd Selenium/Javascript/protractor && npm install && npm run android && npm run web",
     "wpython": "python Selenium/Python/web/sample.py && python Selenium/Python/android/sample.py",
     "wruby": "ruby Selenium/Ruby/web/sample.rb && ruby Selenium/Ruby/android/sample.rb",
-    "wjava": "cd Selenium/Java && mvn clean install -P android  && mvn clean install -P web "
+    "wjava": "cd Selenium/Java && mvn clean install -P android -DjobName=$jobName -DjobNumber=$jobNumber && mvn clean install -P web -DjobName=$jobName -DjobNumber=$jobNumber"
   },
   "repository": {
     "type": "git",
