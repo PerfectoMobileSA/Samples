@@ -57,8 +57,7 @@ exports.config = {
     framework: 'jasmine',
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
-        // Jasmine default timeout
-        defaultTimeoutInterval: 9999999,
+        defaultTimeoutInterval: 100000,
         // The Jasmine framework allows interception of each assertion in order to log the state of the application
         // or website depending on the result. For example, it is pretty handy to take a screenshot every time
         // an assertion fails.
@@ -74,7 +73,7 @@ exports.config = {
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
     before: function (capabilities, specs) {
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
         if (process.env.jobName != null) {
             reportingClient = new Reporting.Perfecto.PerfectoReportingClient(new Reporting.Perfecto.PerfectoExecutionContext({
                 webdriver: {
@@ -100,6 +99,7 @@ exports.config = {
         }
         
         browser.reportingClient = reportingClient;
+        browser.setTimeout({ 'implicit': 5000 })
 
         var myReporter = {
             specStarted: function (result) {

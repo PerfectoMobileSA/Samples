@@ -58,7 +58,7 @@ exports.config = {
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
         // Jasmine default timeout
-        defaultTimeoutInterval: 9999999,
+        defaultTimeoutInterval: 100000,
         // The Jasmine framework allows interception of each assertion in order to log the state of the application
         // or website depending on the result. For example, it is pretty handy to take a screenshot every time
         // an assertion fails.
