@@ -74,6 +74,7 @@ exports.config = {
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
     before: function (capabilities, specs) {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
         if (process.env.jobName != null) {
             reportingClient = new Reporting.Perfecto.PerfectoReportingClient(new Reporting.Perfecto.PerfectoExecutionContext({
                 webdriver: {

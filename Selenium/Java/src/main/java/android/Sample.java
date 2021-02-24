@@ -71,8 +71,6 @@ public class Sample {
 			String search = "perfectomobile";
 			reportiumClient.stepStart("Navigate to Google");
 			 Map<String, Object> params = new HashMap<>();
-			// params.put("url", "https://www.google.com");
-			// driver.executeScript("mobile:browser:goto", params);
 			driver.get("https://www.google.com");
 			reportiumClient.stepEnd();
 

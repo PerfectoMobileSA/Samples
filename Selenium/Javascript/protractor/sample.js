@@ -32,6 +32,11 @@ describe('Selenium NodeJS', () => {
         browser.executeScript("arguments[0].click()", href);
         browser.reportingClient.stepEnd();
 
+        browser.reportingClient.stepStart("Verify Perfecto page load");
+        var home = element(by.xpath("//*[@alt='Home']"));
+        browser.wait(EC.elementToBeClickable(home), timeout);
+        browser.reportingClient.stepEnd();
+
         browser.reportingClient.stepStart("Press back");
         browser.getCapabilities().then(function (c) {
             console.log(c.get('platformName'));

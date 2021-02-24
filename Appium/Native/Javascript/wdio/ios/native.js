@@ -4,12 +4,14 @@ describe('Native NodeJS', function () {
         browser.reportingClient.stepStart('Enter email');
         var email = $('[name="login_email"]');
         email.waitForDisplayed({ timeout: 30000 });
+        email.click()
         email.addValue("test@perfecto.com");
         browser.reportingClient.stepEnd();
 
         browser.reportingClient.stepStart('Enter password');
         var password = $('[name="login_password"]');
         password.waitForDisplayed({ timeout: 30000 });
+        password.click();
         password.addValue("test123");
         browser.reportingClient.stepEnd();
 
@@ -31,6 +33,7 @@ describe('Native NodeJS', function () {
         head.click();
         var flight = $("//*[@value='- Select -']");
         flight.waitForDisplayed({ timeout: 30000 });
+        flight.click();
         flight.addValue("Flight");
         browser.reportingClient.stepEnd();
 
