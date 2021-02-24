@@ -81,7 +81,7 @@ exports.config = {
                         return browser.execute(command, params);
                     }
                 },
-                job: new perfectoReporting.Model.Job({
+                job: new Reporting.Model.Job({
                     jobName: process.env.jobName,
                     buildNumber: parseInt(process.env.jobNumber)
                 }),
