@@ -21,7 +21,7 @@ The project demonstrates a sample selenium automation with Perfecto
 
 ## Integration With Perfecto
 
-1. Open sample.js in terminal/ command prompt.
+1. Open android_conf.js/web_config.js within protractor folder in terminal/ command prompt.
    
 2. Replace <\<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
 

@@ -21,7 +21,7 @@ The project demonstrates a sample native app automation with Perfecto
 
 ## Integration With Perfecto
 
-1. Open native.js within ios/ android folder in  terminal/ command prompt.
+1. Open conf.js within ios/ android folder in  terminal/ command prompt.
    
 2. Replace <\<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
 
