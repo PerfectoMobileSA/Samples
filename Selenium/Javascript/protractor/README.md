@@ -1,4 +1,5 @@
 - [Protractor Selenium JS sample](#protractor-selenium-js-sample)
+  - [Prerequisite](#prerequisite)
   - [Getting started](#getting-started)
   - [Integration With Perfecto](#integration-with-perfecto)
   - [Running the test](#running-the-test)
@@ -10,6 +11,10 @@
 The project demonstrates a sample Protractor selenium automation with Perfecto
 
 </br>
+
+## Prerequisite
+
+Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 ## Getting started
 - Navigate to protractor folder in terminal/ command prompt. 
@@ -34,7 +39,7 @@ The project demonstrates a sample Protractor selenium automation with Perfecto
 </br>
 
 ## Running the test
-
+Navigate to protractor folder in terminal/ command prompt. 
 Run the below command to execute the android sample:
 
     npm run android

@@ -41,6 +41,7 @@ The project demonstrates a sample native app automation with Perfecto
 
 ## Running the test
 
+Navigate to wdio folder in terminal/ command prompt. 
 
 Run the below command to execute the iOS sample:
 
