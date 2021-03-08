@@ -1,4 +1,4 @@
-- [JS Selenium sample](#js-selenium-sample)
+- [Protractor Selenium JS sample](#protractor-selenium-js-sample)
   - [Getting started](#getting-started)
   - [Integration With Perfecto](#integration-with-perfecto)
   - [Running the test](#running-the-test)
@@ -6,8 +6,8 @@
   - [Help](#help)
   
 
-# JS Selenium sample
-The project demonstrates a sample selenium automation with Perfecto
+# Protractor Selenium JS sample
+The project demonstrates a sample Protractor selenium automation with Perfecto
 
 </br>
 

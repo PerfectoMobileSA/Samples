@@ -25,7 +25,7 @@ Install the following dependencies on your machine prior as a pre-requisite:
 
 ## Running sample as is
 
-* Open `Sample.java` inside `selenium` folder.</p>
+* Open `Sample.java` inside `android/ web` folder.</p>
 
 * Search for the below line and replace `<<cloud name>>` with your perfecto cloud name (e.g. demo) </br>  
 		&nbsp;&nbsp;	&nbsp;&nbsp; String cloudName = `"<<cloud name>>"`;
