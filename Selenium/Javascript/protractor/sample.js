@@ -24,8 +24,8 @@ describe('Selenium NodeJS', () => {
         browser.reportingClient.stepEnd();
 
         browser.reportingClient.stepStart('Navigate to Perfecto');
-        var stats = element(by.xpath('//*[@id="result-stats"]'));
-        browser.wait(EC.elementToBeClickable(stats), timeout);
+        var results = element(by.xpath('(//*[contains(@class,"O9g5cc uUPGi")])[1]'));
+        browser.wait(EC.elementToBeClickable(results), timeout);
         var href = element(by.xpath('(//*[contains(@href,"https://www.perfecto.io/")])[1]'));
         href.getLocation().then(function(location) {
             return browser.executeScript('window.scrollTo(' + location.x + ', ' + location.y + ');');

@@ -17,7 +17,7 @@ exports.config = {
             browserName: 'Chrome',
             browserVersion: 'latest',
             location: 'US East',
-            resolution: '1024x768',
+            resolution: '1920x1080',
             'goog:chromeOptions': {
                 w3c: false
             }
