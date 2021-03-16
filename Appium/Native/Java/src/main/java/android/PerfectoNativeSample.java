@@ -139,7 +139,7 @@ public class PerfectoNativeSample {
 
 		// Prints the Smart Reporting URL
 		String reportURL = reportiumClient.getReportUrl();
-		System.out.println("Report URL - " + reportURL);
+		System.out.println("Report url - " + reportURL);
 
 		// Quits the driver
 		driver.quit();

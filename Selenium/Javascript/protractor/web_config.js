@@ -94,7 +94,7 @@ exports.config = {
         // Output report URL
         return reportingClient.getReportUrl().then(
             function (url) {
-                console.log(`Report url = ${url}`);
+                console.log(`Report url - ${url}`);
             }
         );
     },

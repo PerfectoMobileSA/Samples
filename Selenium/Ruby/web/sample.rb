@@ -78,7 +78,7 @@ rescue Exception => exception
     raise exception
 ensure
     # Prints the report url
-     puts 'report url: ' + @reportiumClient.getReportUrl
+     puts 'Report url - ' + @reportiumClient.getReportUrl
      
     #Quits the driver
     @driver.quit
