@@ -18,6 +18,7 @@ import com.perfecto.reportium.model.PerfectoExecutionContext;
 import com.perfecto.reportium.model.Project;
 import com.perfecto.reportium.test.TestContext;
 import com.perfecto.reportium.test.result.TestResultFactory;
+import org.openqa.selenium.Point;
 
 public class Sample {
 
@@ -25,8 +26,7 @@ public class Sample {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities("", "", Platform.ANY);
 
-		// 1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the
-		// cloudName of demo.perfectomobile.com).
+		// 1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
 		String cloudName = "<<cloud name>>";
 
 		// 2. Replace <<security token>> with your perfecto security token.
@@ -90,8 +90,11 @@ public class Sample {
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Navigate to Perfecto");
-			WebElement href = wait.until(ExpectedConditions.elementToBeClickable(
-					driver.findElement(By.xpath("(//*[contains(@href,'https://www.perfecto.io/')])[1]"))));
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("center_col"))));
+			WebElement href = driver.findElement(By.xpath("(//*[contains(@href,'https://www.perfecto.io/')])[1]"));
+			Point elementLocation = href.getLocation();
+			driver.executeScript("window.scrollTo(" + elementLocation.getX() + ", " + elementLocation.getY() + ");");
+			wait.until(ExpectedConditions.visibilityOf(href));
 			driver.executeScript("arguments[0].scrollIntoView()", href);
 			driver.executeScript("arguments[0].click()", href);
 			reportiumClient.stepEnd();
