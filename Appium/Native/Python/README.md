@@ -22,11 +22,11 @@ Install the following:
     * Mac/ Linux:
             Install latest python version from [here](https://www.python.org/downloads)
 
- 1. Pip package manager:
+ 2. Pip package manager:
 
     Follow the official documentation from [here](https://pip.pypa.io/en/stable/installing/) to install pip.
 
- 2. Run the following command from terminal/ command prompt to install project dependencies:
+ 3. Run the following command from terminal/ command prompt to install project dependencies:
     - Mac:
     
           pip3 install selenium==3.141.0
@@ -37,8 +37,14 @@ Install the following:
           pip install selenium==3.141.0
           pip install appium-Python-Client==1.0.2
 
-    </br>
+  4. Mac only: Run the following command in terminal in order to allow python connect via https protocol:
+   
+          /Applications/Python\ <<Python major version>>/Install\ Certificates.command
 
+    
+       where <\<Python major version>> corresponds to Python's major version. E.g. 3.8
+       
+       </br>
 # Native App
 
 ## Integration With Perfecto

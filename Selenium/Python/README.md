@@ -38,7 +38,14 @@ Install the following:
           pip install selenium==3.141.0
           pip install appium-Python-Client==1.0.2
 
-    </br>
+  4. Mac only: Run the following command in terminal in order to allow python connect via https protocol:
+   
+          /Applications/Python\ <<Python major version>>/Install\ Certificates.command
+
+    
+       where <\<Python major version>> corresponds to Python's major version. E.g. 3.8
+       
+       </br>
 
 # Selenium
 
