@@ -16,17 +16,13 @@ This sample shows how to integrate Selenium with Perfecto using ruby language.
 
 - Install Ruby from [here](https://www.ruby-lang.org/en/documentation/installation/)
 
-- Windows only: Run the following commands in command prompt.
+- Run the following commands in command line/ terminal:
 
       gem install ffi
       gem uninstall -aIx eventmachine
       gem install eventmachine --platform=ruby
-
-- Run the following commands in command line/ terminal:
-
-      gem install selenium-webdriver
-      gem install perfecto-reporting
-      gem install appium_lib
+      gem install bundler
+      bundle install
 
 </br>
 

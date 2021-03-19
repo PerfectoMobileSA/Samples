@@ -1,0 +1,4 @@
+source "https://rubygems.org"
+gem 'selenium-webdriver', '3.142.7'
+gem 'perfecto-reporting', '3.0.5'
+gem 'appium_lib', '10.6.0'
