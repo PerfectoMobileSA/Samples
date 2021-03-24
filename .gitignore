@@ -13,3 +13,5 @@ Python/Conf.pyc
 .vs
 env
 Gemfile.lock
+obj/
+bin/

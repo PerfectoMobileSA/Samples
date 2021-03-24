@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     },
     replace: {
       creds: {
-        src: ['**/**/Java/**/*.java', "**/**/Ruby/**/*.rb", "**/**/Python/**/*.py", "Appium/**/Javascript/wdio/ios/*.js", "Appium/**/Javascript/wdio/android/*.js", "Appium/**/CSharp/**/**/**/*.cs", "Selenium/Javascript/protractor/*.js", 'Selenium/Java/**/*.java', "Selenium/Ruby/**/*.rb", "Selenium/Python/**/*.py"],
+        src: ['**/**/Java/**/*.java', "**/**/Ruby/**/*.rb", "**/**/Python/**/*.py", "Appium/**/Javascript/wdio/ios/*.js", "Appium/**/Javascript/wdio/android/*.js", "Appium/**/CSharp/**/**/**/*.cs", "Selenium/Javascript/protractor/*.js", 'Selenium/Java/**/*.java', "Selenium/Ruby/**/*.rb", "Selenium/Python/**/*.py","Selenium/CSharp/**/**/**/*.cs"],
         overwrite: true,
         replacements: [{
           from: "<<cloud name>>",
