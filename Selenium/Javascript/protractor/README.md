@@ -14,6 +14,9 @@ The project demonstrates a sample Protractor selenium automation with Perfecto
 
 ## Prerequisite
 
+The latest version of Node.js 14.x appropriate for your platform
+On Windows 7, the latest version of Node.js 12.x is required. Newer versions are not supported.
+
 Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 ## Getting started

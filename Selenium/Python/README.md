@@ -15,10 +15,10 @@ This sample shows how to integrate Perfecto with Selenium using python language.
 
 Install the following:
 
-1. Python 3+:
+1. Python 3.9+:
     
     * Windows: 
-            Download latest python version from [here](https://www.python.org/downloads/windows/) and install.
+            Download latest python version from [here](https://www.python.org/downloads/windows/) and install. Note: On Windows 7, Python 3.8.x is required. Newer versions are not supported.
     * Mac/ Linux:
             Install latest python version from [here](https://www.python.org/downloads)
 

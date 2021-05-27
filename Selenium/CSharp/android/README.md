@@ -7,7 +7,9 @@
 
 ## Pre-requisites
 
-* Install Visual Studio Community Edition 2019 or above
+* [Install Visual Studio Community Edition 2019](https://visualstudio.microsoft.com/downloads/) or later
+* [.NET Framework 4.8 Developer Pack](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+
 
 </br>  
 

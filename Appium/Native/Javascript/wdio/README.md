@@ -1,4 +1,5 @@
 - [JS Native app sample](#js-native-app-sample)
+  - [Prerequisites](#Prerequisites)
   - [Getting started](#getting-started)
   - [Integration With Perfecto](#integration-with-perfecto)
   - [Running the test](#running-the-test)
@@ -10,6 +11,15 @@
 The project demonstrates a sample native app automation with Perfecto
 
 </br>
+
+# Prerequisites
+
+Make sure you have installed:
+
+The latest version of Node.js 14.x appropriate for your platform
+On Windows 7, the latest version of Node.js 12.x is required. Newer versions are not supported.
+
+Install npm
 
 ## Getting started
 - Navigate to wdio folder in terminal/ command prompt. 

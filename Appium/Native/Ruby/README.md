@@ -14,7 +14,7 @@ This sample shows how to integrate with Perfecto using ruby language.
 
 ## Getting Started
 
-- Install Ruby from [here](https://www.ruby-lang.org/en/documentation/installation/)
+- Install the latest Ruby 2.7 version appropriate for your platform  (DevKit is required)
 
 - Run the following commands in command line/ terminal:
 
