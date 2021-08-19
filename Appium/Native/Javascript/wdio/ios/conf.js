@@ -25,28 +25,26 @@ exports.config = {
     ],
     maxInstances: 1,
 
-    capabilities: [
-        {
-            securityToken: securityToken,
-            automationName: 'Appium',
-            // 3. Set device capabilities.
-            platformName: 'iOS',
-            model: 'iPhone.*',
+    capabilities: [{
+        securityToken: securityToken,
+        automationName: 'Appium',
+        // 3. Set device capabilities.
+        platformName: 'iOS',
+        model: 'iPhone.*',
+        platformVersion: '15.*',
+        // 4. Set Perfecto Media repository path of App under test.
+        app: 'PUBLIC:ExpenseTracker/Native/iOS/InvoiceApp1.0.ipa',
 
-            // 4. Set Perfecto Media repository path of App under test.
-            app: 'PUBLIC:ExpenseTracker/Native/iOS/InvoiceApp1.0.ipa',
-
-            // 5. Set the unique identifier of your app
-            bundleId: 'io.perfecto.expense.tracker',
-            autoLaunch: true, // Whether to have Appium install and launch the app automatically.
-            autoInstrument: true, // To work with hybrid applications, install the iOS/Android application as instrumented.
-            // fullReset: false, // Reset app state by uninstalling app
-            browserName: '',
-            takesScreenshot: false,
-            screenshotOnError: true,
-            openDeviceTimeout: 5
-        },
-    ],
+        // 5. Set the unique identifier of your app
+        bundleId: 'io.perfecto.expense.tracker',
+        autoLaunch: true, // Whether to have Appium install and launch the app automatically.
+        iOSResign: true, // To work with hybrid applications, install the iOS/Android application as instrumented.
+        // fullReset: false, // Reset app state by uninstalling app
+        browserName: '',
+        takesScreenshot: false,
+        screenshotOnError: true,
+        openDeviceTimeout: 5
+    }, ],
     // Default timeout for all waitFor* commands.
     waitforTimeout: 30000,
     // Default timeout in milliseconds for request
@@ -62,7 +60,7 @@ exports.config = {
         // The Jasmine framework allows interception of each assertion in order to log the state of the application
         // or website depending on the result. For example, it is pretty handy to take a screenshot every time
         // an assertion fails.
-        expectationResultHandler: function (passed, assertion) {
+        expectationResultHandler: function(passed, assertion) {
             // do something
         }
     },
@@ -73,7 +71,7 @@ exports.config = {
     // =====
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
-    before: function (capabilities, specs) {
+    before: function(capabilities, specs) {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
         if (process.env.jobName != null) {
             reportingClient = new Reporting.Perfecto.PerfectoReportingClient(new Reporting.Perfecto.PerfectoExecutionContext({
@@ -101,10 +99,10 @@ exports.config = {
         browser.reportingClient = reportingClient;
 
         var myReporter = {
-            specStarted: function (result) {
+            specStarted: function(result) {
                 reportingClient.testStart(result.fullName);
             },
-            specDone: async function (result) {
+            specDone: async function(result) {
                 if (result.status === 'failed') {
                     const failure = await result.failedExpectations[result.failedExpectations.length - 1];
                     await reportingClient.testStop({
@@ -122,7 +120,7 @@ exports.config = {
     },
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
-    after: async function (result, capabilities, specs) {
+    after: async function(result, capabilities, specs) {
         await console.log("\n\nReport: " + browser.capabilities['testGridReportUrl']);
     },
 }

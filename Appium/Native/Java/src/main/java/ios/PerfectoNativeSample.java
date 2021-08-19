@@ -49,7 +49,7 @@ public class PerfectoNativeSample {
 		// Set other capabilities.
 		capabilities.setCapability("enableAppiumBehavior", true);
 		capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
-		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
+		capabilities.setCapability("iOSResign",true); // Resign with developer certificate
 		// capabilities.setCapability("fullReset", false); // Reset app state by  uninstalling app.
 		capabilities.setCapability("takesScreenshot", false);
 		capabilities.setCapability("screenshotOnError", true);
@@ -96,6 +96,7 @@ public class PerfectoNativeSample {
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Click login");
+			driver.hideKeyboard();
 			IOSElement login = (IOSElement) wait
 					.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("login_login_btn"))));
 			login.click();

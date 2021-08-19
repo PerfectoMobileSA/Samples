@@ -31,6 +31,7 @@ namespace Android
 
             // 3. Set device capabilities.
             capabilities.PlatformName = "Android";
+            capabilities.AddAdditionalCapability("model", "Galaxy S.*|LG.*");
 
             // 4. Set Perfecto Media repository path of App under test.
             capabilities.AddAdditionalCapability("app", "PUBLIC:ExpenseTracker/Native/android/ExpenseAppVer1.0.apk");
@@ -41,7 +42,6 @@ namespace Android
             // Set other capabilities.
             capabilities.AddAdditionalCapability("enableAppiumBehavior", true);
             capabilities.AddAdditionalCapability("autoLaunch", true); // Whether to install and launch the app automatically.
-            capabilities.AddAdditionalCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
             // capabilities.AddAdditionalCapability("fullReset", false); // Reset app state by uninstalling app.
             capabilities.AddAdditionalCapability("takesScreenshot", false);
             capabilities.AddAdditionalCapability("screenshotOnError", true);
@@ -91,6 +91,7 @@ namespace Android
                 password.SendKeys("test123");
 
                 reportiumClient.StepStart("Click login");
+                driver.HideKeyboard();
                 IWebElement login = wait.Until(ExpectedConditions.ElementIsVisible(By.Id("io.perfecto.expense.tracker:id/login_login_btn")));
                 login.Click();
 

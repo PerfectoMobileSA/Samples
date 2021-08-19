@@ -1,6 +1,6 @@
-describe('Native NodeJS', function () {
+describe('Native NodeJS', function() {
 
-    it('Android Sample', function () {
+    it('Android Sample', function() {
         browser.reportingClient.stepStart('Enter email');
         var email =
             $('android=new UiSelector().resourceId("io.perfecto.expense.tracker:id/login_email")');
@@ -16,6 +16,7 @@ describe('Native NodeJS', function () {
         browser.reportingClient.stepEnd();
 
         browser.reportingClient.stepStart('Click login');
+        driver.hideKeyboard();
         var login =
             $('android=new UiSelector().resourceId("io.perfecto.expense.tracker:id/login_login_btn")');
         login.waitForDisplayed({ timeout: 30000 });

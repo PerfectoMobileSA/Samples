@@ -1,4 +1,4 @@
-describe('Native NodeJS', function () {
+describe('Native NodeJS', function() {
 
     it('iOS Sample', function() {
         browser.reportingClient.stepStart('Enter email');
@@ -16,6 +16,7 @@ describe('Native NodeJS', function () {
         browser.reportingClient.stepEnd();
 
         browser.reportingClient.stepStart('Click login');
+        driver.hideKeyboard();
         var login = $('[name="login_login_btn"]');
         login.waitForDisplayed({ timeout: 30000 });
         login.click();

@@ -35,7 +35,8 @@ public class PerfectoNativeSample {
 
 		// 3. Set device capabilities.
 		capabilities.setCapability("platformName", "Android");
-
+		capabilities.setCapability("model", "Galaxy S.*|LG.*");
+		
 		// 4. Set Perfecto Media repository path of App under test.
 		capabilities.setCapability("app", "PUBLIC:ExpenseTracker/Native/android/ExpenseAppVer1.0.apk");
 
@@ -45,7 +46,6 @@ public class PerfectoNativeSample {
 		// Set other capabilities.
 		capabilities.setCapability("enableAppiumBehavior", true); // Enable new Appium Architecture
 		capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
-		capabilities.setCapability("autoInstrument", true); // To work with hybrid applications, install the iOS/Android application as instrumented.
 		// capabilities.setCapability("fullReset", false); // Reset app state by uninstalling app.
 		capabilities.setCapability("takesScreenshot", false);
 		capabilities.setCapability("screenshotOnError", true);
@@ -93,6 +93,7 @@ public class PerfectoNativeSample {
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Click login");
+			driver.hideKeyboard();
 			AndroidElement login = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
 					driver.findElement(By.id("login_login_btn"))));
 			login.click();

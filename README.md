@@ -5,7 +5,7 @@
 
 
 # Perfecto Samples
-[![Build Status](https://tinyurl.com/1c4kjo6i)](https://www.perfecto.io/)
+[![Build Status](https://tinyurl.com/b3xr5wsr)](https://www.perfecto.io/)
 
 
 Refer to README.md of each individual programming language folders for steps to execute sample scripts. 

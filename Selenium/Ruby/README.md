@@ -14,7 +14,7 @@ This sample shows how to integrate Selenium with Perfecto using ruby language.
 
 ## Getting Started
 
-- Install the latest Ruby 2.7 version appropriate for your platform.  (DevKit is required)
+- Prior to working with the script, install the latest Ruby 2.7 (DevKit required) appropriate for your platform on your machine.
 
 - Run the following commands in command line/ terminal:
 

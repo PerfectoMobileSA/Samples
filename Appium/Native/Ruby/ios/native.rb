@@ -24,7 +24,7 @@ desired_caps = {
           # Set other capabilities.
           enableAppiumBehavior: true, # Enable new architecture of Appium
           autoLaunch: true, # Whether to have Appium install and launch the app automatically.
-          autoInstrument: true, # To work with hybrid applications, install the iOS/Android application as instrumented.
+          iOSResign: true, # Resign with developer certificate
           # fullReset: false, # Whether to install and launch the app automatically.
           takesScreenshot: false,
           screenshotOnError: true,
@@ -62,6 +62,7 @@ begin
     @reportiumClient.stepEnd()
 
     @reportiumClient.stepStart('Click login')
+    @driver.hide_keyboard
     wait.until{ @driver.find_element(:name => 'login_login_btn').displayed? }
     @driver.find_element(:name => 'login_login_btn').click
     @reportiumClient.stepEnd()

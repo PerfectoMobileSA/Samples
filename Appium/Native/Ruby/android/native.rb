@@ -12,6 +12,7 @@ desired_caps = {
         
         # 3. Set device capabilities.
         platformName: 'Android',
+        model: 'Galaxy S.*|LG.*',
 
         # 4. Set Perfecto Media repository path of App under test.
         app: 'PUBLIC:ExpenseTracker/Native/android/ExpenseAppVer1.0.apk',
@@ -22,7 +23,6 @@ desired_caps = {
         # Set other capabilities.
         enableAppiumBehavior: true, # Enable new architecture of Appium
         autoLaunch: true, # Whether to have Appium install and launch the app automatically.
-        autoInstrument: true, # To work with hybrid applications, install the iOS/Android application as instrumented.
         # fullReset: false, # Reset app state by uninstalling app
         takesScreenshot: false,
         screenshotOnError: true,
@@ -61,6 +61,7 @@ begin
     @reportiumClient.stepEnd()
 
     @reportiumClient.stepStart('Click login')
+    @driver.hide_keyboard
     wait.until{ @driver.find_element(:id => 'login_login_btn').displayed? }
     @driver.find_element(:id => 'login_login_btn').click
     @reportiumClient.stepEnd()

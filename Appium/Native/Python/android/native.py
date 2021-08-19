@@ -1,6 +1,4 @@
 
-import time
-
 from appium.webdriver.common.mobileby import MobileBy
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
@@ -15,6 +13,7 @@ capabilities = {
     
     # 3. Set device capabilities.
     'platformName': 'Android',
+    'model': 'Galaxy S.*|LG.*',
     
      # 4. Set Perfecto Media repository path of App under test.
     'app': 'PUBLIC:ExpenseTracker/Native/android/ExpenseAppVer1.0.apk',
@@ -25,7 +24,6 @@ capabilities = {
     # Set other capabilities.
     'enableAppiumBehavior': True, # Enable new architecture of Appium
     'autoLaunch': True, # Whether to have Appium install and launch the app automatically.
-    'autoInstrument': True, # To work with hybrid applications, install the iOS/Android application as instrumented.
     # 'fullReset': false, # Reset app state by uninstalling app
     'takesScreenshot': False,
     'screenshotOnError': True,
@@ -44,6 +42,10 @@ email.send_keys('test@perfecto.com')
 password = wait.until(EC.presence_of_element_located((MobileBy.ID, "io.perfecto.expense.tracker:id/login_password")))
 password.send_keys('test123')
 
+params = {
+  'mode': 'off'
+}
+driver.execute_script('mobile:keyboard:display', params);
 login = wait.until(EC.presence_of_element_located((MobileBy.ID, "io.perfecto.expense.tracker:id/login_login_btn")))
 login.click()
 

@@ -10,6 +10,7 @@ capabilities = {
     #  2. Replace <<security token>> with your perfecto security token.
     'securityToken' : "<<security token>>",
     
+    
     # 3. Set device capabilities.
     'platformName': 'iOS',
     'manufacturer': 'Apple',
@@ -24,7 +25,7 @@ capabilities = {
     # Set other capabilities.
     'enableAppiumBehavior': True, # Enable new architecture of Appium
     'autoLaunch': True, # To work with hybrid applications, install the iOS/Android application as instrumented.
-    'autoInstrument': True, # To work with hybrid applications, install the iOS/Android application as instrumented.
+    'iOSResign': True, # Resigns using developer certificate
     # 'fullReset': false, # Reset app state by uninstalling app
     'takesScreenshot': False,
     'screenshotOnError': True,
