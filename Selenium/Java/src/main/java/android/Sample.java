@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
@@ -76,29 +77,7 @@ public class Sample {
 			reportiumClient.stepStart("Search for Perfecto");
 			WebElement email = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@name='q']"))));
 			email.sendKeys(search);
-			reportiumClient.stepEnd();
-
-			reportiumClient.stepStart("Select Perfecto");
-			WebElement searchItem = wait.until(ExpectedConditions
-					.elementToBeClickable(driver.findElement(By.xpath("(//*[text()='" + search + "'])[1]"))));
-			searchItem.click();
-			reportiumClient.stepEnd();
-
-			reportiumClient.stepStart("Navigate to Perfecto");
-			WebElement href = wait.until(ExpectedConditions.visibilityOf(
-					driver.findElement(By.xpath("(//*[contains(@href,'https://www.perfecto.io/')])[1]"))));
-			driver.executeScript("arguments[0].scrollIntoView()", href);
-			driver.executeScript("arguments[0].click()", href);
-			reportiumClient.stepEnd();
-
-			reportiumClient.stepStart("Verify Perfecto page load");
-			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@alt='Home']"))));
-			reportiumClient.stepEnd();
-			
-			reportiumClient.stepStart("Press back");
-			params = new HashMap<>();
-			params.put("target", "back");
-			driver.executeScript("mobile:browser:navigate", params);
+			email.sendKeys(Keys.RETURN);
 			reportiumClient.stepEnd();
 		
 			reportiumClient.stepStart("Verify Title");

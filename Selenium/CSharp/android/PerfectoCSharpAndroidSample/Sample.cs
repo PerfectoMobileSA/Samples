@@ -73,28 +73,7 @@ namespace PerfectoCSharpAndroidSample
 				reportiumClient.StepStart("Search for Perfecto");
 				IWebElement email = wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//*[@name='q']"))));
 				email.SendKeys(search);
-				reportiumClient.StepEnd();
-
-				reportiumClient.StepStart("Select Perfecto");
-				IWebElement searchItem = wait.Until(ExpectedConditions
-						.ElementToBeClickable(driver.FindElement(By.XPath("(//*[text()='" + search + "'])[1]"))));
-				searchItem.Click();
-				reportiumClient.StepEnd();
-
-				reportiumClient.StepStart("Navigate to Perfecto");
-				IWebElement href = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("(//*[contains(@href,'https://www.perfecto.io/')])[1]")));
-				driver.ExecuteScript("arguments[0].scrollIntoView()", href);
-				driver.ExecuteScript("arguments[0].click()", href);
-				reportiumClient.StepEnd();
-
-				reportiumClient.StepStart("Verify Perfecto page load");
-				wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//*[@alt='Home']"))));
-				reportiumClient.StepEnd();
-
-				reportiumClient.StepStart("Press back");
-				pars = new Dictionary<String, Object>();
-				pars.Add("target", "back");
-				driver.ExecuteScript("mobile:browser:navigate", pars);
+				email.SendKeys(Keys.Enter);
 				reportiumClient.StepEnd();
 
 				reportiumClient.StepStart("Verify Title");
@@ -103,7 +82,6 @@ namespace PerfectoCSharpAndroidSample
 				// Adding assertions to the Execution Report. This method will not fail the test
 				reportiumClient.ReportiumAssert(expectedText, driver.Title.Contains(expectedText));
 				reportiumClient.StepEnd();
-
 
 				reportiumClient.TestStop(TestResultFactory.CreateSuccess());
 			}

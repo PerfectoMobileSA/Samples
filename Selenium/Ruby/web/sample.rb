@@ -47,22 +47,7 @@ begin
     @reportiumClient.stepStart('Search for ' + search);
     wait.until{ @driver.find_element(:xpath => '//*[@name="q"]') }
     @driver.find_element(:xpath => '//*[@name="q"]').send_keys(search)
-    @reportiumClient.stepEnd();
-
-    @reportiumClient.stepStart('Select ' + search);
-    wait.until{ @driver.find_element(:xpath => '(//*[text()="' + search + '"])[1]').displayed? }
-    @driver.find_element(:xpath => '(//*[text()="' + search + '"])[1]').click
-    @reportiumClient.stepEnd();
-
-    @reportiumClient.stepStart('Navigate to Perfecto');
-    wait.until{ @driver.find_element(:xpath => '(//*[contains(@href,"https://www.perfecto.io/")])[1]').displayed? }
-    href = @driver.find_element(:xpath => '(//*[contains(@href,"https://www.perfecto.io/")])[1]')
-    @driver.execute_script("arguments[0].scrollIntoView()", href);
-    @driver.execute_script("arguments[0].click()", href);
-    @reportiumClient.stepEnd();
-
-    @reportiumClient.stepStart("Press back");
-    @driver.navigate.back
+    @driver.find_element(:name => 'q').send_keys:return
     @reportiumClient.stepEnd();
 
     @reportiumClient.stepStart('Verify Title');

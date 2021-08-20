@@ -76,30 +76,7 @@ namespace PerfectoCSharpWebSample
 				reportiumClient.StepStart("Search for " + search);
 				IWebElement email = wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//*[@name='q']"))));
 				email.SendKeys(search);
-				reportiumClient.StepEnd();
-
-				reportiumClient.StepStart("Select " + search);
-				IWebElement searchItem = wait.Until(ExpectedConditions
-						.ElementToBeClickable(driver.FindElement(By.XPath("(//*[text()='" + search + "'])[1]"))));
-				searchItem.Click();
-				reportiumClient.StepEnd();
-
-				reportiumClient.StepStart("Navigate to Perfecto");
-				wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.Id("center_col"))));
-				IWebElement href = driver.FindElement(By.XPath("(//*[contains(@href,'https://www.perfecto.io/')])[1]"));
-				Point elementLocation = href.Location;
-				driver.ExecuteScript("window.scrollTo(" + elementLocation.X + ", " + elementLocation.Y + ");");
-				wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("(//*[contains(@href,'https://www.perfecto.io/')])[1]")));
-				driver.ExecuteScript("arguments[0].scrollIntoView()", href);
-				driver.ExecuteScript("arguments[0].click()", href);
-				reportiumClient.StepEnd();
-
-				reportiumClient.StepStart("Verify Perfecto page load");
-				wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//*[@alt='Home']"))));
-				reportiumClient.StepEnd();
-
-				reportiumClient.StepStart("Press back");
-				driver.Navigate().Back();
+				email.SendKeys(Keys.Enter);
 				reportiumClient.StepEnd();
 
 				reportiumClient.StepStart("Verify Title");

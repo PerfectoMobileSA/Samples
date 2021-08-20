@@ -1,4 +1,3 @@
-
 let perfectoReporting = require('perfecto-reporting');
 var reportingClient;
 
@@ -6,28 +5,26 @@ exports.config = {
     //  1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
     seleniumAddress: 'https://<<cloud name>>.perfectomobile.com/nexperience/perfectomobile/wd/hub/fast',
     specs: ['sample.js'],
-    multiCapabilities: [
-        {
-            // 2. Replace <<security token>> with your perfecto security token.
-            securityToken: '<<security token>>',
+    multiCapabilities: [{
+        // 2. Replace <<security token>> with your perfecto security token.
+        securityToken: '<<security token>>',
 
-            // 3. Set web capabilities. More info: https://developers.perfectomobile.com/display/PD/Select+a+device+for+manual+testing#Selectadeviceformanualtesting-genCapGeneratecapabilities
-            platformName: 'Windows',
-            platformVersion: '10',
-            browserName: 'Chrome',
-            browserVersion: 'latest',
-            location: 'US East',
-            resolution: '1920x1080',
-            'goog:chromeOptions': {
-                w3c: false
-            }
+        // 3. Set web capabilities. More info: https://developers.perfectomobile.com/display/PD/Select+a+device+for+manual+testing#Selectadeviceformanualtesting-genCapGeneratecapabilities
+        platformName: 'Windows',
+        platformVersion: '10',
+        browserName: 'Chrome',
+        browserVersion: 'latest',
+        location: 'US East',
+        resolution: '1920x1080',
+        'goog:chromeOptions': {
+            w3c: false
         }
-    ],
+    }],
     //default page loading timeout in ms
     getPageTimeout: 10000,
 
     //set perfecto reporter
-    onPrepare: async () => {
+    onPrepare: async() => {
         browser.ignoreSynchronization = true;
         var perfectoExecutionContext;
         if (process.env.jobName != null) {
@@ -49,9 +46,8 @@ exports.config = {
         browser.reportingClient = reportingClient;
 
 
-        var perfectoReporter =
-        {
-            jasmineStarted: function (suiteInfo) {
+        var perfectoReporter = {
+            jasmineStarted: function(suiteInfo) {
                 // put insome info on jasmine started
             },
             suiteStarted: (result) => {
@@ -90,10 +86,10 @@ exports.config = {
         };
         jasmine.getEnv().addReporter(perfectoReporter);
     },
-    onComplete: function () {
+    onComplete: function() {
         // Output report URL
         return reportingClient.getReportUrl().then(
-            function (url) {
+            function(url) {
                 console.log(`Report url - ${url}`);
             }
         );

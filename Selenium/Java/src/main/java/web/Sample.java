@@ -2,7 +2,7 @@ package web;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
@@ -81,32 +81,9 @@ public class Sample {
 			reportiumClient.stepStart("Search for " + search);
 			WebElement email = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@name='q']"))));
 			email.sendKeys(search);
+			email.sendKeys(Keys.RETURN);
 			reportiumClient.stepEnd();
 
-			reportiumClient.stepStart("Select " + search);
-			WebElement searchItem = wait.until(ExpectedConditions
-					.elementToBeClickable(driver.findElement(By.xpath("(//*[text()='" + search + "'])[1]"))));
-			searchItem.click();
-			reportiumClient.stepEnd();
-
-			reportiumClient.stepStart("Navigate to Perfecto");
-			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("center_col"))));
-			WebElement href = driver.findElement(By.xpath("(//*[contains(@href,'https://www.perfecto.io/')])[1]"));
-			Point elementLocation = href.getLocation();
-			driver.executeScript("window.scrollTo(" + elementLocation.getX() + ", " + elementLocation.getY() + ");");
-			wait.until(ExpectedConditions.visibilityOf(href));
-			driver.executeScript("arguments[0].scrollIntoView()", href);
-			driver.executeScript("arguments[0].click()", href);
-			reportiumClient.stepEnd();
-
-			reportiumClient.stepStart("Verify Perfecto page load");
-			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@alt='Home']"))));
-			reportiumClient.stepEnd();
-			
-			reportiumClient.stepStart("Press back");
-			driver.navigate().back();
-			reportiumClient.stepEnd();
-		
 			reportiumClient.stepStart("Verify Title");
 			String expectedText = "perfectomobile - Google Search";
 			// Adding assertions to the Execution Report. This method will not fail the test

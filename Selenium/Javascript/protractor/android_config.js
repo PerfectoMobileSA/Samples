@@ -1,4 +1,3 @@
-
 let perfectoReporting = require('perfecto-reporting');
 var reportingClient;
 
@@ -6,21 +5,19 @@ exports.config = {
     //  1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
     seleniumAddress: 'https://<<cloud name>>.perfectomobile.com/nexperience/perfectomobile/wd/hub/fast',
     specs: ['sample.js'],
-    multiCapabilities: [
-        {
-            // 2. Replace <<security token>> with your perfecto security token.
-            securityToken: '<<security token>>',
+    multiCapabilities: [{
+        // 2. Replace <<security token>> with your perfecto security token.
+        securityToken: '<<security token>>',
 
-            // 3. Set device capabilities.
-            platformName: 'Android',
-            model: 'Galaxy S.*',
+        // 3. Set device capabilities.
+        platformName: 'Android',
+        model: 'Galaxy S.*',
 
-            // Set other capabilities.
-            browserName: 'mobileOS',
-            useAppiumForWeb: true,
-            openDeviceTimeout: 5
-        }
-    ],
+        // Set other capabilities.
+        browserName: 'mobileOS',
+        useAppiumForWeb: true,
+        openDeviceTimeout: 5
+    }],
     //default page loading timeout in ms
     getPageTimeout: 10000,
 
@@ -47,9 +44,8 @@ exports.config = {
         browser.reportingClient = reportingClient;
 
 
-        var perfectoReporter =
-        {
-            jasmineStarted: function (suiteInfo) {
+        var perfectoReporter = {
+            jasmineStarted: function(suiteInfo) {
                 // put insome info on jasmine started
             },
             suiteStarted: (result) => {
@@ -88,10 +84,10 @@ exports.config = {
         };
         jasmine.getEnv().addReporter(perfectoReporter);
     },
-    onComplete: function () {
+    onComplete: function() {
         // Output report URL
         return reportingClient.getReportUrl().then(
-            function (url) {
+            function(url) {
                 console.log(`Report url - ${url}`);
             }
         );
