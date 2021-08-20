@@ -74,9 +74,9 @@ namespace PerfectoCSharpWebSample
 				reportiumClient.StepEnd();
 
 				reportiumClient.StepStart("Search for " + search);
-				IWebElement email = wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//*[@name='q']"))));
-				email.SendKeys(search);
-				email.SendKeys(Keys.Enter);
+				IWebElement searchbox = wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//*[@name='q']"))));
+				searchbox.SendKeys(search);
+				searchbox.SendKeys(Keys.Enter);
 				reportiumClient.StepEnd();
 
 				reportiumClient.StepStart("Verify Title");

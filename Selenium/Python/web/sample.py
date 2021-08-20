@@ -33,9 +33,9 @@ wait = WebDriverWait(driver, timeout)
 search = "perfectomobile"
 
 driver.get("https://www.google.com")
-email = wait.until(EC.presence_of_element_located((MobileBy.NAME, "q")))
-email.send_keys(search)
-email.send_keys(Keys.ENTER)
+searchbox = wait.until(EC.presence_of_element_located((MobileBy.NAME, "q")))
+searchbox.send_keys(search)
+searchbox.send_keys(Keys.ENTER)
 expectedText = "perfectomobile - Google Search"
 assert expectedText == driver.title
 

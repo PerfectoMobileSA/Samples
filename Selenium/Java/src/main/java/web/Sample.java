@@ -79,9 +79,9 @@ public class Sample {
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Search for " + search);
-			WebElement email = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@name='q']"))));
-			email.sendKeys(search);
-			email.sendKeys(Keys.RETURN);
+			WebElement searchbox = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@name='q']"))));
+			searchbox.sendKeys(search);
+			searchbox.sendKeys(Keys.RETURN);
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Verify Title");
