@@ -31,7 +31,6 @@ exports.config = {
         // 3. Set device capabilities.
         platformName: 'iOS',
         model: 'iPhone.*',
-        platformVersion: '15.*',
         // 4. Set Perfecto Media repository path of App under test.
         app: 'PUBLIC:ExpenseTracker/Native/iOS/InvoiceApp1.0.ipa',
 
