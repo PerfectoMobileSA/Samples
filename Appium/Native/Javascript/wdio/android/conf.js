@@ -97,7 +97,6 @@ exports.config = {
         }
 
         browser.reportingClient = reportingClient;
-        browser.setTimeout({ 'implicit': 5000 })
 
         var myReporter = {
             specStarted: function(result) {
