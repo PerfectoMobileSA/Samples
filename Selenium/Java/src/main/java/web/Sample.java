@@ -24,6 +24,11 @@ public class Sample {
 
 	public static void main(String[] args) throws Exception {
 
+
+		// System.setProperty("http.proxyHost", "127.0.0.1");
+		// System.setProperty("http.proxyPort", "8081");
+		// System.setProperty("https.proxyHost", "127.0.0.1");
+		// System.setProperty("https.proxyPort", "8081");
 		DesiredCapabilities capabilities = new DesiredCapabilities("", "", Platform.ANY);
 
 		// 1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
