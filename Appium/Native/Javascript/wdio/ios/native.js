@@ -1,62 +1,62 @@
 describe('Native NodeJS', function() {
 
-    it('iOS Sample', function() {
-        browser.reportingClient.stepStart('Enter email');
+    it('iOS Sample', async () => {
+        await browser.reportingClient.stepStart('Enter email');
         var email = $('[name="login_email"]');
-        email.waitForDisplayed({ timeout: 30000 });
-        email.click()
-        email.addValue("test@perfecto.com");
-        browser.reportingClient.stepEnd();
+        await email.waitForDisplayed({ timeout: 30000 });
+        await email.click()
+        await email.addValue("test@perfecto.com");
+        await browser.reportingClient.stepEnd();
 
-        browser.reportingClient.stepStart('Enter password');
+        await browser.reportingClient.stepStart('Enter password');
         var password = $('[name="login_password"]');
-        password.waitForDisplayed({ timeout: 30000 });
-        password.click();
-        password.addValue("test123");
-        browser.reportingClient.stepEnd();
+        await password.waitForDisplayed({ timeout: 30000 });
+        await password.click();
+        await password.addValue("test123");
+        await browser.reportingClient.stepEnd();
 
-        browser.reportingClient.stepStart('Click login');
-        driver.hideKeyboard();
+        await browser.reportingClient.stepStart('Click login');
+        await driver.hideKeyboard();
         var login = $('[name="login_login_btn"]');
-        login.waitForDisplayed({ timeout: 30000 });
-        login.click();
-        browser.reportingClient.stepEnd();
+        await login.waitForDisplayed({ timeout: 30000 });
+        await login.click();
+        await browser.reportingClient.stepEnd();
 
-        browser.reportingClient.stepStart('Add expense');
+        await browser.reportingClient.stepStart('Add expense');
         var add = $('[name="list_add_btn"]');
-        add.waitForDisplayed({ timeout: 30000 });
-        add.click();
-        browser.reportingClient.stepEnd();
+        await add.waitForDisplayed({ timeout: 30000 });
+        await add.click();
+        await browser.reportingClient.stepEnd();
 
-        browser.reportingClient.stepStart('Select head');
+        await browser.reportingClient.stepStart('Select head');
         var head = $('[name="edit_head"]');
-        head.waitForDisplayed({ timeout: 30000 });
-        head.click();
+        await head.waitForDisplayed({ timeout: 30000 });
+        await head.click();
         var flight = $("//*[@value='- Select -']");
-        flight.waitForDisplayed({ timeout: 30000 });
-        flight.click();
-        flight.addValue("Flight");
-        browser.reportingClient.stepEnd();
+        await flight.waitForDisplayed({ timeout: 30000 });
+        await flight.click();
+        await flight.addValue("Flight");
+        await browser.reportingClient.stepEnd();
 
-        browser.reportingClient.stepStart('Enter amount');
+        await browser.reportingClient.stepStart('Enter amount');
         var add = $('[name="edit_amount"]');
-        add.waitForDisplayed({ timeout: 30000 });
-        add.click();
-        add.addValue("100");
-        browser.reportingClient.stepEnd();
+        await add.waitForDisplayed({ timeout: 30000 });
+        await add.click();
+        await add.addValue("100");
+        await browser.reportingClient.stepEnd();
 
-        browser.reportingClient.stepStart('Save expense');
+        await browser.reportingClient.stepStart('Save expense');
         var layout = $('[name="add_save_btn"]');
-        layout.waitForDisplayed({ timeout: 30000 });
-        layout.click();
-        browser.reportingClient.stepEnd();
+        await layout.waitForDisplayed({ timeout: 30000 });
+        await layout.click();
+        await browser.reportingClient.stepEnd();
 
-        browser.reportingClient.stepStart("Verify alert");
+        await browser.reportingClient.stepStart("Verify alert");
         expectedText = "Please enter valid category"
         var alert = $('[name="' + expectedText + '"]');
-        alert.waitForDisplayed({ timeout: 30000 });
-        var result = alert.getText();
-        browser.reportingClient.reportiumAssert(expectedText, result == expectedText);
+        await alert.waitForDisplayed({ timeout: 30000 });
+        var result = await alert.getText();
+        await browser.reportingClient.reportiumAssert(expectedText, result == expectedText);
 
     });
 });

@@ -16,8 +16,7 @@ The project demonstrates a sample native app automation with Perfecto
 
 Make sure you have installed:
 
-The latest version of Node.js 14.x appropriate for your platform
-On Windows 7, the latest version of Node.js 12.x is required. Newer versions are not supported.
+Install node 19.x
 
 Install npm
 

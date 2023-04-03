@@ -2,10 +2,12 @@ const path = require('path');
 const Reporting = require('perfecto-reporting');
 var reportingClient;
 //1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the cloudName of demo.perfectomobile.com).
-const host = '<<cloud name>>';
+var host = '<<cloud name>>';
 //   2. Replace <<security token>> with your perfecto security token.
-const securityToken = '<<security token>>';
+var securityToken = '<<security token>>';
 
+host = process.env.HOST == null ? host : process.env.HOST;
+securityToken = process.env.SECURITY_TOKEN == null ? securityToken : process.env.SECURITY_TOKEN;
 
 //Define your global tags here:
 const tags = ['SampleTag1'];
