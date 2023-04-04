@@ -52,7 +52,7 @@ describe('Native NodeJS', function() {
         await browser.reportingClient.stepEnd();
 
         await browser.reportingClient.stepStart("Verify alert");
-        expectedText = "Please enter valid category"
+        const  expectedText = "Please enter valid category"
         var alert = $('[name="' + expectedText + '"]');
         await alert.waitForDisplayed({ timeout: 30000 });
         var result = await alert.getText();

@@ -56,7 +56,7 @@ describe('Native NodeJS', function () {
         await browser.reportingClient.stepEnd();
 
         await browser.reportingClient.stepStart("Verify alert");
-        expectedText = "Select Currency"
+        const expectedText = "Select Currency"
         var alert =
             $('//*[@text="' + expectedText + '"]');
         await alert.waitForDisplayed({ timeout: 30000 });
