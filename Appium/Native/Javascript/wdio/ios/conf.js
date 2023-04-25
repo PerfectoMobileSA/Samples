@@ -39,6 +39,7 @@ exports.config = {
 
         // 5. Set the unique identifier of your app
         bundleId: 'io.perfecto.expense.tracker',
+        appiumVersion: '1.20.2',
         autoLaunch: true, // Whether to have Appium install and launch the app automatically.
         iOSResign: true, // To work with hybrid applications, install the iOS/Android application as instrumented.
         // fullReset: false, // Reset app state by uninstalling app
