@@ -1,4 +1,4 @@
-package android;
+package ios;
 
 import com.perfecto.reportium.client.ReportiumClient;
 import com.perfecto.reportium.client.ReportiumClientFactory;
@@ -40,10 +40,13 @@ public class Sample {
 
 		Map<String, Object> cloudOptions = new HashMap<>();
 
-		cloudOptions.put("platformName", "Android");
+		cloudOptions.put("platformName", "iOS");
+		cloudOptions.put("model", "iPhone.*");
 		cloudOptions.put("securityToken", securityToken);
-		cloudOptions.put("browserName", "Chrome");
+//		cloudOptions.put("appiumVersion", "latest");
+//		cloudOptions.put("enableAppiumBehavior", true);
 		cloudOptions.put("useAppiumForWeb", true);
+		cloudOptions.put("browserName", "Safari");
 		cloudOptions.put("automationName", "Appium");
 
 		capabilities.setCapability("perfecto:options", cloudOptions);
@@ -71,7 +74,7 @@ public class Sample {
 
 		ReportiumClient reportiumClient = new ReportiumClientFactory().createPerfectoReportiumClient(perfectoExecutionContext);
 
-		reportiumClient.testStart("Selenium Java Android Sample", new TestContext("native", "android"));
+		reportiumClient.testStart("Selenium Java iOS Sample", new TestContext("native", "android"));
 
 		try{
 

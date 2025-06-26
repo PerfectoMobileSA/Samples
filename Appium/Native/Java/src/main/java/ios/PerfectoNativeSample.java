@@ -1,25 +1,23 @@
 package ios;
 
 import java.net.URL;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.perfecto.reportium.client.ReportiumClient;
 import com.perfecto.reportium.client.ReportiumClientFactory;
 import com.perfecto.reportium.model.PerfectoExecutionContext;
 import com.perfecto.reportium.model.Project;
+import com.perfecto.reportium.model.Job;
 import com.perfecto.reportium.test.TestContext;
 import com.perfecto.reportium.test.result.TestResultFactory;
-import com.perfecto.reportium.model.Job;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSElement;
+import org.openqa.selenium.By;
 
 public class PerfectoNativeSample {
 
@@ -28,41 +26,35 @@ public class PerfectoNativeSample {
 		DesiredCapabilities capabilities = new DesiredCapabilities("", "", Platform.ANY);
 
 		// 1. Replace <<cloud name>> with your perfecto cloud name (e.g. demo is the
-		// cloud name of demo.perfectomobile.com).
-		String cloudName = "<<cloud name>>";
+		// cloudName of demo.perfectomobile.com).
+		String host = "<<cloud name>>.perfectomobile.com";
 
 		// 2. Replace <<security token>> with your perfecto security token.
 		String securityToken = "<<security token>>";
-	
-		capabilities.setCapability("securityToken", securityToken);
+		
+		Map<String, Object> cloudOptions = new HashMap<>();
 
-		// 3. Set device capabilities.
-		capabilities.setCapability("platformName", "iOS");
-		capabilities.setCapability("model", "iPhone.*");
+		cloudOptions.put("platformName", "iOS");
+		cloudOptions.put("model", "iPhone.*");
+		cloudOptions.put("securityToken", securityToken);
+		cloudOptions.put("appiumVersion", "latest");
+		cloudOptions.put("enableAppiumBehavior", true);
+		cloudOptions.put("bundleId", "io.perfecto.expense.tracker");
+		cloudOptions.put("iOSResign", "true");
+		cloudOptions.put("automationName", "Appium");
+		cloudOptions.put("app", "PUBLIC:ExpenseTracker/Native/InvoiceApp1.0.ipa");
+		cloudOptions.put("enableAppiumBehavior", true); // Enable new Appium Architecture
+		cloudOptions.put("autoLaunch", true); // Whether to install and launch the app automatically.
+		capabilities.setCapability("perfecto:options", cloudOptions);
 
-		// 4. Set Perfecto Media repository path of App under test.
-		capabilities.setCapability("app", "PUBLIC:ExpenseTracker/Native/iOS/InvoiceApp1.0.ipa");
 
-		// 5. Set the unique identifier of your app
-		capabilities.setCapability("bundleId", "io.perfecto.expense.tracker");
-
-		// Set other capabilities.
-		capabilities.setCapability("enableAppiumBehavior", true);
-		capabilities.setCapability("autoLaunch", true); // Whether to install and launch the app automatically.
-		capabilities.setCapability("iOSResign",true); // Resign with developer certificate
-		// capabilities.setCapability("fullReset", false); // Reset app state by  uninstalling app.
-		capabilities.setCapability("takesScreenshot", false);
-		capabilities.setCapability("screenshotOnError", true);
-		capabilities.setCapability("openDeviceTimeout", 5);
-
-		// Initialize the IOSDriver driver
-		IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(
-				new URL("https://" + cloudName + ".perfectomobile.com/nexperience/perfectomobile/wd/hub"),
-				capabilities);
+		// Initialize the AndroidDriver driver
+		AppiumDriver driver = new AppiumDriver(new URL("https://" + host + "/nexperience/perfectomobile/wd/hub"), capabilities);
 
 		// Setting implicit wait
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
+		// Reporting client. For more details, see http://developers.perfectomobile.com/display/PD/Reporting
 		PerfectoExecutionContext perfectoExecutionContext;
 		if (System.getProperty("jobName") != null) {
 			perfectoExecutionContext = new PerfectoExecutionContext.PerfectoExecutionContextBuilder()
@@ -75,78 +67,91 @@ public class PerfectoNativeSample {
 					.withProject(new Project("My Project", "1.0"))
 					.withWebDriver(driver).build();
 		}
-		ReportiumClient reportiumClient = new ReportiumClientFactory()
-				.createPerfectoReportiumClient(perfectoExecutionContext);
 
-		reportiumClient.testStart("Native Java iOS Sample", new TestContext("native", "ios"));
+		ReportiumClient reportiumClient = new ReportiumClientFactory().createPerfectoReportiumClient(perfectoExecutionContext);
+		reportiumClient.testStart("Native iOS Android Sample", new TestContext("native", "android"));
 
-		try {
-			// Sample test
-			reportiumClient.stepStart("Enter email");
-			WebDriverWait wait = new WebDriverWait(driver, 30);
-			IOSElement email = (IOSElement) wait
-					.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("login_email"))));
-			email.sendKeys("test@perfecto.com");
-			reportiumClient.stepEnd();
+		try{
 
 			reportiumClient.stepStart("Enter password");
-			IOSElement password = (IOSElement) wait
-					.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("login_password"))));
-			password.sendKeys("test123");
+			driver.findElement(By.id("login_password")).sendKeys("test123");
+			reportiumClient.stepEnd();
+
+			reportiumClient.stepStart("Enter email");
+			driver.findElement(By.id("login_email")).sendKeys("test@perfecto.com");
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Click login");
-			driver.hideKeyboard();
-			IOSElement login = (IOSElement) wait
-					.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("login_login_btn"))));
-			login.click();
+			driver.findElement(By.xpath("//*[@label=\"done\"]")).click();
+			driver.findElement(By.xpath("//*[@name=\"Login\"]")).click();
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Add expense");
-			IOSElement add_expense = (IOSElement) wait
-					.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("list_add_btn"))));
-			add_expense.click();
+			driver.findElement(By.id("list_add_btn")).click();
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Select head");
-			IOSElement head = (IOSElement) wait
-					.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("edit_head"))));
-			head.click();
-			List<WebElement> picker = wait
-					.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@value=\"- Select -\"]")));
-			picker.get(0).sendKeys("Flight");
+			driver.findElement(By.id("edit_head")).click();
+			WebElement picker = driver.findElement(By.xpath("//XCUIElementTypePickerWheel"));
+			picker.sendKeys("Flight");
 			reportiumClient.stepEnd();
 
-			reportiumClient.stepStart("Enter amount");
-			IOSElement amount = (IOSElement) wait
-			.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("edit_amount"))));
-			amount.sendKeys("100");
+//			reportiumClient.stepStart("Enter amount");
+//			driver.findElement(By.id("add_amount")).sendKeys("100");
+//			reportiumClient.stepEnd();
+			reportiumClient.stepStart("Enter Amount");
+			driver.findElement(By.xpath("//XCUIElementTypeSlider")).click();
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Save expense");
-			IOSElement save_expense = (IOSElement) wait
-			.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("add_save_btn"))));
-			save_expense.click();
+			driver.findElement(By.xpath("//*[@label=\"Save\"]")).click();
 			reportiumClient.stepEnd();
 
 			reportiumClient.stepStart("Verify alert");
 			String expectedText = "Please enter valid category";
-			IOSElement alert = (IOSElement) wait
-			.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name(expectedText))));
+			WebElement alert = driver.findElement(By.xpath("//*[@label=\"Please enter valid category\"]"));
 			reportiumClient.reportiumAssert(expectedText, alert.getText().equalsIgnoreCase(expectedText));
+			driver.findElement(By.xpath("//*[@label=\"OK\"]")).click();
+			reportiumClient.stepEnd();
+
+			reportiumClient.stepStart("Select Category and Date");
+			driver.findElement(By.id("edit_category")).click();
+			picker = driver.findElement(By.xpath("//XCUIElementTypePickerWheel"));
+			picker.sendKeys("Business");
+			driver.findElement(By.id("edit_date")).click();
+			reportiumClient.stepEnd();
+
+			reportiumClient.stepStart("Save expense");
+			driver.findElement(By.xpath("//*[@label=\"Save\"]")).click();
+			driver.findElement(By.xpath("//*[@label=\"OK\"]")).click();
+
+			reportiumClient.stepEnd();
+
+			reportiumClient.stepStart("Logout Application");
+			driver.findElement(By.xpath("//*[@label=\"side menu\"]")).click();
+			driver.findElement(By.xpath("//*[@name=\"list_logout_menu\"]")).click();
 			reportiumClient.stepEnd();
 
 			reportiumClient.testStop(TestResultFactory.createSuccess());
 		} catch (Exception e) {
-			reportiumClient.testStop(TestResultFactory.createFailure(e));
-			assert (false);
+			reportiumClient.testStop(TestResultFactory.createFailure(e.getMessage(), e));
+			e.printStackTrace();
+		} finally {
+			try {
+
+				driver.quit();
+
+				// Retrieve the URL to the DigitalZoom Report (= Reportium Application) for an aggregated view over the execution
+				String reportURL = reportiumClient.getReportUrl();
+
+				// Retrieve the URL to the Execution Summary PDF Report
+				String reportPdfUrl = (String)(driver.getCapabilities().getCapability("reportPdfUrl"));
+				// For detailed documentation on how to export the Execution Summary PDF Report, the Single Test report and other attachments such as
+				// video, images, device logs, vitals and network files - see http://developers.perfectomobile.com/display/PD/Exporting+the+Reports
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-
-		// Prints the Smart Reporting URL
-		String reportURL = reportiumClient.getReportUrl();
-		System.out.println("Report url - " + reportURL);
-
-		// Quits the driver
-		driver.quit();
 	}
 }
