@@ -49,7 +49,7 @@ public class PerfectoNativeSample {
 		capabilities.setCapability("perfecto:options", cloudOptions);
 
 		// Initialize the AndroidDriver driver
-		RemoteWebDriver driver = new RemoteWebDriver(new URL("https://" + host + "/nexperience/perfectomobile/wd/hub"), capabilities);
+		AppiumDriver driver = new AppiumDriver(new URL("https://" + host + "/nexperience/perfectomobile/wd/hub"), capabilities);
 
 		// Setting implicit wait
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
